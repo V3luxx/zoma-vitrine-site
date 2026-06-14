@@ -358,8 +358,8 @@
       <a class="link" data-go="contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="link" data-go="contact" style="font-weight:500;color:var(--taupe)">Se connecter</a>
-      <button class="btn btn-terra" data-go="tarifs">Essai gratuit</button>
+      <a class="link" href="https://app.zoma-app.fr/login" style="font-weight:500;color:var(--taupe)">Se connecter</a>
+      <a class="btn btn-terra" href="https://app.zoma-app.fr/signup">Essai gratuit</a>
       <button class="burger" id="burger" aria-label="Menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -370,7 +370,7 @@
     <a data-anchor="demo">Démo</a>
     <a data-go="tarifs">Tarifs</a>
     <a data-go="contact">Contact</a>
-    <button class="btn btn-terra" data-go="tarifs">Démarrer l'essai gratuit</button>
+    <a class="btn btn-terra" href="https://app.zoma-app.fr/signup">Démarrer l'essai gratuit</a>
   </div>
 </header>
 
@@ -384,7 +384,7 @@
         <h1>Votre agenda, vos clients et vos messages — <em>enfin réunis</em>.</h1>
         <p class="lead">Zoma rassemble la prise de rendez-vous, la messagerie client et votre fichier clients dans un seul outil simple. Conçu pour les solopreneurs et auto-entrepreneurs de la beauté et du bien-être.</p>
         <div class="hero-actions">
-          <button class="btn btn-terra btn-lg" data-go="tarifs">Démarrer 30 jours gratuits</button>
+          <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr/signup">Démarrer 30 jours gratuits</a>
           <button class="btn btn-ghost btn-lg" data-anchor="demo">Voir la démo</button>
         </div>
         <div class="trust">
@@ -565,7 +565,7 @@
       <div class="cta-inner reveal">
         <h2>Reprenez le contrôle de votre activité</h2>
         <p>30 jours pour tout essayer, sans carte bancaire. Vous gardez vos données, vous arrêtez quand vous voulez.</p>
-        <button class="btn btn-terra btn-lg" data-go="tarifs">Commencer gratuitement</button>
+        <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr/signup">Commencer gratuitement</a>
       </div>
     </div>
   </section>
@@ -590,7 +590,7 @@
           <div class="pdesc">L'essentiel pour gérer vos rendez-vous et vos clients sans effort.</div>
           <div class="price"><span class="amt" data-m="19" data-y="15">19 €</span><span class="per">/ mois</span></div>
           <div class="billed" data-bill="">Facturé mensuellement</div>
-          <button class="btn btn-ghost" data-go="contact">Démarrer l'essai gratuit</button>
+          <a class="btn btn-ghost" href="https://app.zoma-app.fr/signup">Démarrer l'essai gratuit</a>
           <ul class="plist">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Agenda & gestion des rendez-vous</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Page de réservation en ligne</li>
@@ -607,7 +607,7 @@
           <div class="pdesc">Toute la puissance de Zoma pour développer votre activité.</div>
           <div class="price"><span class="amt" data-m="34" data-y="27">34 €</span><span class="per">/ mois</span></div>
           <div class="billed" data-bill="">Facturé mensuellement</div>
-          <button class="btn btn-terra" data-go="contact">Démarrer l'essai gratuit</button>
+          <a class="btn btn-terra" href="https://app.zoma-app.fr/signup">Démarrer l'essai gratuit</a>
           <ul class="plist">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> <b style="font-weight:600">Tout le plan Essentiel, et&nbsp;:</b></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Messagerie client intégrée</li>
@@ -661,9 +661,12 @@
 
       <div class="form-card reveal" style="transition-delay:.08s">
         <div id="formFields">
+          <input type="hidden" name="access_key" value="830a24b6-9906-4a92-a7c9-40a492c15d98" />
+          <input type="hidden" name="subject" value="Nouveau message depuis zoma-app.fr" />
+          <input type="hidden" name="from_name" value="Zoma Site Vitrine" />
           <div class="field">
             <label for="cname">Votre nom</label>
-            <input id="cname" type="text" placeholder="Jean Dupont" />
+            <input id="cname" name="name" type="text" placeholder="Jean Dupont" required />
           </div>
           <div class="field">
             <label for="cmail">E-mail</label>
@@ -799,15 +802,37 @@
   tgYear.addEventListener('click', ()=>setPeriod(true));
 
   /* ---------- Contact : envoi ---------- */
-  document.getElementById('sendBtn').addEventListener('click', ()=>{
+  document.getElementById('sendBtn').addEventListener('click', async ()=>{
     const name = document.getElementById('cname').value.trim();
     const mail = document.getElementById('cmail').value.trim();
-    if(!name || !mail){
-      [['cname',name],['cmail',mail]].forEach(([id,v])=>{ if(!v) document.getElementById(id).style.borderColor='var(--terra-deep)'; });
+    const msg  = document.getElementById('cmsg').value.trim();
+    if(!name || !mail || !msg){
+      if(!name) document.getElementById('cname').style.borderColor='var(--terra-deep)';
+      if(!mail) document.getElementById('cmail').style.borderColor='var(--terra-deep)';
+      if(!msg)  document.getElementById('cmsg').style.borderColor='var(--terra-deep)';
       return;
     }
-    document.getElementById('formFields').style.display='none';
-    document.getElementById('formOk').classList.add('show');
+    const btn = document.getElementById('sendBtn');
+    btn.textContent = 'Envoi en cours…'; btn.disabled = true;
+    const formData = new FormData();
+    formData.append('access_key', document.querySelector('[name="access_key"]').value);
+    formData.append('subject',    document.querySelector('[name="subject"]').value);
+    formData.append('from_name',  document.querySelector('[name="from_name"]').value);
+    formData.append('redirect',   'false');
+    formData.append('name',    name);
+    formData.append('email',   mail);
+    formData.append('activite', document.getElementById('cjob').value);
+    formData.append('message', msg);
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {method:'POST', body: formData});
+      const data = await res.json();
+      document.getElementById('formFields').style.display='none';
+      if(data.success){ document.getElementById('formOk').classList.add('show'); }
+      else { document.getElementById('formErr').classList.add('show'); }
+    } catch(e){
+      document.getElementById('formFields').style.display='none';
+      document.getElementById('formErr').classList.add('show');
+    }
   });
 
   /* ---------- Routing (pages) ---------- */
