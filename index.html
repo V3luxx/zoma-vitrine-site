@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zoma — L'outil de gestion des indépendants de la beauté</title>
+<meta name="description" content="Agenda, messagerie client et fichier clients réunis dans un seul outil simple et abordable. Pensé pour les prothésistes ongulaires, techniciennes du regard et tatoueurs." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF8F6;
+    --ink:#1A0F0A;
+    --terra:#C9897A;
+    --terra-deep:#B06F5D;
+    --rose:#F1E4DE;
+    --rose-2:#F7EEE9;
+    --taupe:#6B5D54;
+    --line:#E9DFD7;
+    --white:#ffffff;
+    --shadow:0 22px 60px -28px rgba(26,15,10,.30);
+    --shadow-sm:0 8px 26px -16px rgba(26,15,10,.28);
+    --font-display:'Playfair Display',Georgia,serif;
+    --font-body:'Hanken Grotesk',system-ui,-apple-system,sans-serif;
+    --r:18px;
+    --maxw:1140px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.1;margin:0;letter-spacing:-.01em}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-family:var(--font-body);font-weight:600;font-size:.97rem;
+    padding:.82rem 1.4rem;border-radius:999px;border:1px solid transparent;
+    cursor:pointer;transition:transform .25s ease, background .25s ease, box-shadow .25s ease, color .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--ink);color:var(--cream)}
+  .btn-primary:hover{background:#2c1a12;transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .btn-terra{background:var(--terra);color:#fff}
+  .btn-terra:hover{background:var(--terra-deep);transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(176,111,93,.6)}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--terra);color:var(--terra-deep);transform:translateY(-2px)}
+  .btn-lg{padding:1rem 1.7rem;font-size:1.02rem}
+
+  :focus-visible{outline:2.5px solid var(--terra-deep);outline-offset:3px;border-radius:6px}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,246,.72);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  header.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 22px -20px rgba(26,15,10,.4)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{font-family:var(--font-display);font-weight:800;font-size:1.7rem;letter-spacing:-.02em;cursor:pointer}
+  .brand .a{color:var(--ink)} .brand .b{color:var(--terra)}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a.link{font-weight:500;font-size:.96rem;color:var(--taupe);position:relative;padding:.2rem 0;transition:color .2s ease}
+  .nav-links a.link:hover{color:var(--ink)}
+  .nav-links a.link::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;background:var(--terra);transition:width .25s ease}
+  .nav-links a.link:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:.9rem}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--ink)}
+  .mobile-menu{display:none;flex-direction:column;gap:.3rem;padding:10px 24px 22px;border-bottom:1px solid var(--line);background:var(--cream)}
+  .mobile-menu a{padding:.7rem 0;font-weight:500;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{margin-top:.8rem;justify-content:center}
+
+  /* ---------- Page system ---------- */
+  .page{display:none;animation:fade .5s ease}
+  .page.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* ---------- Eyebrow ---------- */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.55rem;
+    font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--terra-deep);
+  }
+  .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--terra)}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 40px}
+  .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4.1rem);font-weight:700;margin:1.3rem 0 1.1rem}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--terra-deep)}
+  .hero .lead{font-size:1.18rem;color:var(--taupe);max-width:30rem}
+  .hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.9rem}
+  .trust{display:flex;align-items:center;gap:1.4rem;margin-top:1.6rem;flex-wrap:wrap}
+  .trust span{display:flex;align-items:center;gap:.45rem;font-size:.9rem;color:var(--taupe)}
+  .trust svg{color:var(--terra-deep);flex:none}
+
+  /* ---------- Agenda card (hero visual) ---------- */
+  .device{
+    background:var(--white);border-radius:24px;border:1px solid var(--line);
+    box-shadow:var(--shadow);overflow:hidden;position:relative;
+  }
+  .device::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 80% -10%,rgba(201,137,122,.12),transparent 60%);pointer-events:none}
+  .device-bar{display:flex;align-items:center;gap:.45rem;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+  .device-bar .title{margin-left:auto;font-family:var(--font-display);font-weight:700;font-size:.95rem;color:var(--ink)}
+  .agenda{padding:18px 18px 22px}
+  .agenda-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .agenda-head .day{font-family:var(--font-display);font-weight:700;font-size:1.15rem}
+  .agenda-head .nav-arrows{display:flex;gap:6px}
+  .arrow{width:30px;height:30px;border-radius:9px;border:1px solid var(--line);background:var(--cream);display:grid;place-items:center;color:var(--taupe)}
+  .slot{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:stretch;margin-bottom:9px}
+  .slot .time{font-size:.82rem;color:var(--taupe);padding-top:10px;font-variant-numeric:tabular-nums}
+  .appt{border-radius:13px;padding:11px 13px;border:1px solid transparent;transition:transform .2s ease}
+  .appt:hover{transform:translateX(3px)}
+  .appt .svc{font-weight:600;font-size:.92rem}
+  .appt .who{font-size:.82rem;opacity:.8}
+  .appt.terra{background:var(--rose);border-color:#ecd6cd}
+  .appt.terra .svc{color:var(--terra-deep)}
+  .appt.ink{background:#f3efe9;border-color:var(--line)}
+  .appt.free{background:repeating-linear-gradient(135deg,#fbf6f3,#fbf6f3 8px,#f6efe9 8px,#f6efe9 16px);border:1px dashed #e3d3c9;color:var(--taupe);display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+  .appt.free .svc{color:var(--taupe);font-weight:500}
+  .appt.free:hover{border-color:var(--terra);color:var(--terra-deep)}
+  .appt.free .plus{font-size:1.1rem;line-height:1}
+  .waitlist-pill{margin-top:10px;display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--terra-deep);background:var(--rose-2);border:1px solid #efdcd4;border-radius:999px;padding:.45rem .8rem;width:fit-content}
+
+  /* ---------- Sections ---------- */
+  section.block{padding:74px 0}
+  .section-head{max-width:40rem}
+  .section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:1rem 0 .8rem}
+  .section-head p{color:var(--taupe);font-size:1.08rem}
+
+  /* Piliers */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+    padding:30px 26px;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm);border-color:#ecd9d0}
+  .icon-badge{width:50px;height:50px;border-radius:14px;background:var(--rose);color:var(--terra-deep);display:grid;place-items:center;margin-bottom:18px}
+  .card h3{font-size:1.3rem;margin-bottom:.5rem}
+  .card p{color:var(--taupe);font-size:.97rem}
+  .card .more{display:inline-flex;align-items:center;gap:.35rem;margin-top:14px;font-weight:600;font-size:.9rem;color:var(--terra-deep)}
+
+  /* Secondary features row */
+  .feat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 34px;margin-top:34px}
+  .feat{display:flex;gap:.8rem;align-items:flex-start;padding:6px 0}
+  .feat .tick{flex:none;width:26px;height:26px;border-radius:8px;background:var(--rose);color:var(--terra-deep);display:grid;place-items:center;margin-top:2px}
+  .feat b{font-weight:600;font-size:.97rem}
+  .feat small{display:block;color:var(--taupe);font-size:.87rem;line-height:1.45}
+
+  /* ---------- Démo ---------- */
+  .demo-wrap{background:var(--ink);border-radius:30px;padding:48px;margin-top:44px;position:relative;overflow:hidden}
+  .demo-wrap::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(201,137,122,.28),transparent 70%)}
+  .demo-grid{display:grid;grid-template-columns:300px 1fr;gap:38px;align-items:start;position:relative;z-index:1}
+  .demo-copy h2{color:var(--cream);font-size:2.1rem;margin:.9rem 0 .8rem}
+  .demo-copy p{color:rgba(250,248,246,.72);font-size:1.02rem}
+  .demo-tabs{display:flex;flex-direction:column;gap:8px;margin-top:26px}
+  .demo-tab{
+    display:flex;align-items:center;gap:.8rem;text-align:left;width:100%;
+    background:transparent;border:1px solid rgba(250,248,246,.16);color:rgba(250,248,246,.82);
+    padding:.85rem 1rem;border-radius:13px;cursor:pointer;font-family:var(--font-body);font-weight:500;font-size:.96rem;
+    transition:background .25s ease,border-color .25s ease,color .25s ease;
+  }
+  .demo-tab svg{flex:none;opacity:.8}
+  .demo-tab:hover{border-color:rgba(201,137,122,.5);color:#fff}
+  .demo-tab.active{background:var(--terra);border-color:var(--terra);color:#fff}
+  .demo-tab.active svg{opacity:1}
+  .demo-screen{background:var(--cream);border-radius:18px;min-height:430px;box-shadow:var(--shadow);overflow:hidden;position:relative}
+  .demo-panel{display:none;animation:fade .45s ease}
+  .demo-panel.active{display:block}
+
+  /* demo: agenda */
+  .d-agenda{padding:22px}
+  .d-agenda .hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .d-agenda .hd h4{font-size:1.15rem}
+  .d-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .d-col .dname{font-size:.78rem;color:var(--taupe);text-align:center;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .d-blk{border-radius:11px;padding:9px 10px;margin-bottom:8px;font-size:.78rem;line-height:1.3;border:1px solid transparent}
+  .d-blk.t{background:var(--rose);border-color:#ecd6cd;color:var(--terra-deep)}
+  .d-blk.k{background:#f1ece5;border-color:var(--line)}
+  .d-blk b{display:block;font-weight:600}
+  .d-blk.empty{background:#fff;border:1px dashed #e3d3c9;color:var(--taupe);text-align:center;cursor:pointer;transition:.2s}
+  .d-blk.empty:hover{border-color:var(--terra);color:var(--terra-deep)}
+
+  /* demo: chat */
+  .d-chat{display:flex;flex-direction:column;height:430px}
+  .d-chat .chd{display:flex;align-items:center;gap:.7rem;padding:14px 18px;border-bottom:1px solid var(--line)}
+  .d-chat .av{width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:600;font-family:var(--font-display)}
+  .d-chat .chd b{font-size:.96rem}.d-chat .chd small{color:#3f9a6b;font-size:.78rem}
+  .d-msgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px}
+  .bub{max-width:78%;padding:.6rem .85rem;border-radius:15px;font-size:.9rem;line-height:1.4}
+  .bub.them{background:#fff;border:1px solid var(--line);border-bottom-left-radius:5px;align-self:flex-start}
+  .bub.me{background:var(--terra);color:#fff;border-bottom-right-radius:5px;align-self:flex-end}
+  .d-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+  .d-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem 1rem;font-family:var(--font-body);font-size:.9rem;background:#fff}
+  .d-input input:focus{outline:none;border-color:var(--terra)}
+  .d-input button{border:none;background:var(--ink);color:#fff;border-radius:50%;width:40px;height:40px;cursor:pointer;display:grid;place-items:center}
+
+  /* demo: clients */
+  .d-clients{display:grid;grid-template-columns:1fr 1.1fr;height:430px}
+  .d-list{border-right:1px solid var(--line);overflow-y:auto}
+  .d-li{display:flex;align-items:center;gap:.7rem;padding:13px 16px;cursor:pointer;border-bottom:1px solid var(--line);transition:background .15s}
+  .d-li:hover{background:var(--rose-2)}
+  .d-li.sel{background:var(--rose)}
+  .d-li .ci{width:34px;height:34px;border-radius:50%;background:#f1ece5;color:var(--ink);display:grid;place-items:center;font-weight:600;font-size:.85rem;flex:none}
+  .d-li b{font-size:.9rem;display:block}.d-li small{font-size:.76rem;color:var(--taupe)}
+  .d-detail{padding:22px}
+  .d-detail .big{width:58px;height:58px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin-bottom:14px}
+  .d-detail h4{font-size:1.3rem}.d-detail .sub{color:var(--taupe);font-size:.86rem;margin-bottom:18px}
+  .d-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+  .d-stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+  .d-stat .n{font-family:var(--font-display);font-weight:700;font-size:1.4rem;color:var(--terra-deep)}
+  .d-stat .l{font-size:.76rem;color:var(--taupe)}
+  .d-note{background:var(--rose-2);border:1px solid #efdcd4;border-radius:12px;padding:12px 14px;font-size:.86rem;color:var(--ink)}
+  .d-note span{display:block;font-size:.72rem;color:var(--taupe);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;font-weight:600}
+
+  /* ---------- Pour qui ---------- */
+  .who-band{background:var(--rose-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.6rem 1.2rem;font-weight:500;font-size:.95rem;display:flex;align-items:center;gap:.5rem;transition:.25s}
+  .chip:hover{border-color:var(--terra);transform:translateY(-2px)}
+  .chip .d{width:7px;height:7px;border-radius:50%;background:var(--terra)}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{padding:18px 0 86px}
+  .cta-inner{background:var(--ink);border-radius:30px;padding:60px 48px;text-align:center;position:relative;overflow:hidden}
+  .cta-inner::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 120% at 50% -20%,rgba(201,137,122,.30),transparent 60%)}
+  .cta-inner>*{position:relative;z-index:1}
+  .cta-inner h2{color:var(--cream);font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:.7rem}
+  .cta-inner p{color:rgba(250,248,246,.74);max-width:34rem;margin:0 auto 1.8rem}
+
+  /* ---------- Pricing ---------- */
+  .price-hero{padding:58px 0 12px;text-align:center}
+  .price-hero h1{font-size:clamp(2.2rem,4.5vw,3.3rem);margin:1rem 0 .8rem}
+  .price-hero p{color:var(--taupe);font-size:1.1rem;max-width:34rem;margin:0 auto}
+  .founder{display:inline-flex;align-items:center;gap:.6rem;background:var(--ink);color:var(--cream);border-radius:999px;padding:.55rem 1.1rem;font-size:.86rem;font-weight:500;margin-bottom:6px}
+  .founder b{color:var(--terra)}
+  .toggle{display:inline-flex;align-items:center;gap:14px;margin:30px auto 8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px}
+  .toggle button{border:none;background:transparent;font-family:var(--font-body);font-weight:600;font-size:.92rem;color:var(--taupe);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.25s;display:flex;align-items:center;gap:.5rem}
+  .toggle button.on{background:var(--ink);color:#fff}
+  .save-tag{background:var(--rose);color:var(--terra-deep);font-size:.74rem;font-weight:700;padding:.12rem .5rem;border-radius:999px}
+  .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:820px;margin:34px auto 0}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 30px;position:relative;transition:transform .3s ease, box-shadow .3s ease}
+  .plan:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+  .plan.featured{border:1.5px solid var(--terra);box-shadow:var(--shadow)}
+  .badge-pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--terra);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.32rem .9rem;border-radius:999px}
+  .plan .pname{font-family:var(--font-display);font-weight:700;font-size:1.5rem}
+  .plan .pdesc{color:var(--taupe);font-size:.92rem;margin:.3rem 0 18px;min-height:42px}
+  .price{display:flex;align-items:baseline;gap:.3rem}
+  .price .amt{font-family:var(--font-display);font-weight:700;font-size:3rem;line-height:1}
+  .price .per{color:var(--taupe);font-size:.95rem}
+  .billed{font-size:.82rem;color:var(--taupe);margin-top:.4rem;min-height:20px}
+  .plan .btn{width:100%;justify-content:center;margin:22px 0}
+  .plist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+  .plist li{display:flex;gap:.6rem;align-items:flex-start;font-size:.93rem}
+  .plist li svg{flex:none;color:var(--terra-deep);margin-top:3px}
+  .plist li.muted{color:#b7aaa0}
+  .plist li.muted svg{color:#d8c9bf}
+  .price-foot{text-align:center;color:var(--taupe);font-size:.9rem;margin-top:26px;display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap}
+
+  .faq{max-width:760px;margin:60px auto 0}
+  .faq h2{font-size:1.9rem;text-align:center;margin-bottom:24px}
+  .qa{border:1px solid var(--line);border-radius:14px;background:#fff;margin-bottom:12px;overflow:hidden}
+  .qa summary{cursor:pointer;padding:18px 20px;font-weight:600;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary .pm{color:var(--terra-deep);font-size:1.3rem;transition:transform .25s}
+  .qa[open] summary .pm{transform:rotate(45deg)}
+  .qa .ans{padding:0 20px 18px;color:var(--taupe);font-size:.95rem}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding:58px 0 30px}
+  .contact-intro h1{font-size:clamp(2.1rem,4.2vw,3rem);margin:1rem 0 1rem}
+  .contact-intro p{color:var(--taupe);font-size:1.08rem;max-width:26rem}
+  .contact-info{margin-top:32px;display:flex;flex-direction:column;gap:16px}
+  .ci-row{display:flex;gap:.9rem;align-items:flex-start}
+  .ci-row .icon{flex:none;width:44px;height:44px;border-radius:13px;background:var(--rose);color:var(--terra-deep);display:grid;place-items:center}
+  .ci-row b{display:block;font-weight:600}.ci-row small{color:var(--taupe)}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow-sm)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:600;font-size:.88rem;margin-bottom:.45rem}
+  .field input,.field select,.field textarea{
+    width:100%;border:1px solid var(--line);border-radius:12px;padding:.78rem .95rem;
+    font-family:var(--font-body);font-size:.96rem;background:var(--cream);color:var(--ink);transition:.2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--terra);background:#fff;box-shadow:0 0 0 4px rgba(201,137,122,.12)}
+  .field textarea{resize:vertical;min-height:120px}
+  .form-card .btn{width:100%;justify-content:center}
+  .form-ok{display:none;text-align:center;padding:30px 10px}
+  .form-ok.show{display:block;animation:fade .4s ease}
+  .form-ok .ok-ic{width:64px;height:64px;border-radius:50%;background:var(--rose);color:var(--terra-deep);display:grid;place-items:center;margin:0 auto 16px}
+  .form-ok h3{font-size:1.4rem;margin-bottom:.5rem}
+  .form-ok p{color:var(--taupe)}
+
+  /* ---------- Footer ---------- */
+  footer.ft{border-top:1px solid var(--line);background:var(--rose-2);padding:48px 0 30px;margin-top:10px}
+  .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+  .ft .brand{font-size:1.5rem;margin-bottom:.6rem}
+  .ft p.tag{color:var(--taupe);font-size:.92rem;max-width:22rem}
+  .ft h5{font-family:var(--font-body);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin:0 0 14px}
+  .ft a.fl{display:block;color:var(--taupe);font-size:.94rem;padding:.28rem 0;cursor:pointer;transition:color .2s}
+  .ft a.fl:hover{color:var(--terra-deep)}
+  .ft-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:36px;padding-top:22px;border-top:1px solid var(--line);color:var(--taupe);font-size:.85rem;flex-wrap:wrap;gap:10px}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .pillars{grid-template-columns:1fr}
+    .feat-row{grid-template-columns:1fr}
+    .demo-grid{grid-template-columns:1fr}
+    .demo-tabs{flex-direction:row;flex-wrap:wrap}
+    .demo-tab{flex:1;min-width:140px;justify-content:center}
+    .plans{grid-template-columns:1fr;max-width:420px}
+    .contact-grid{grid-template-columns:1fr;gap:34px}
+    .ft-grid{grid-template-columns:1fr;gap:26px}
+  }
+  @media(max-width:740px){
+    .nav-links,.nav-cta .btn{display:none}
+    .burger{display:block}
+    .demo-wrap{padding:28px}
+    .cta-inner{padding:42px 26px}
+    .d-clients{grid-template-columns:1fr}
+    .d-list{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="brand" data-go="accueil"><span class="a">Zo</span><span class="b">ma</span></div>
+    <nav class="nav-links">
+      <a class="link" data-anchor="atouts">Fonctionnalités</a>
+      <a class="link" data-anchor="demo">Démo</a>
+      <a class="link" data-go="tarifs">Tarifs</a>
+      <a class="link" data-go="contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="link" data-go="contact" style="font-weight:500;color:var(--taupe)">Se connecter</a>
+      <button class="btn btn-terra" data-go="tarifs">Essai gratuit</button>
+      <button class="burger" id="burger" aria-label="Menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a data-anchor="atouts">Fonctionnalités</a>
+    <a data-anchor="demo">Démo</a>
+    <a data-go="tarifs">Tarifs</a>
+    <a data-go="contact">Contact</a>
+    <button class="btn btn-terra" data-go="tarifs">Démarrer l'essai gratuit</button>
+  </div>
+</header>
+
+<!-- ============ PAGE ACCUEIL ============ -->
+<main class="page active" id="page-accueil">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">L'outil tout-en-un de la beauté</span>
+        <h1>Votre agenda, vos clientes et vos messages — <em>enfin réunis</em>.</h1>
+        <p class="lead">Zoma rassemble la prise de rendez-vous, la messagerie client et votre fichier clients dans un seul outil simple. Pensé pour les indépendantes de la beauté et du bien-être.</p>
+        <div class="hero-actions">
+          <button class="btn btn-terra btn-lg" data-go="tarifs">Démarrer 30 jours gratuits</button>
+          <button class="btn btn-ghost btn-lg" data-anchor="demo">Voir la démo</button>
+        </div>
+        <div class="trust">
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Sans carte bancaire</span>
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Prêt en 5 minutes</span>
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Données hébergées en Europe</span>
+        </div>
+      </div>
+
+      <div class="reveal device" style="transition-delay:.12s">
+        <div class="device-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">Mon agenda</span></div>
+        <div class="agenda">
+          <div class="agenda-head">
+            <span class="day">Mardi 16 juin</span>
+            <span class="nav-arrows">
+              <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg></span>
+              <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg></span>
+            </span>
+          </div>
+          <div class="slot"><span class="time">09:00</span><div class="appt terra"><div class="svc">Pose gel complète</div><div class="who">Camille D. · 1h30</div></div></div>
+          <div class="slot"><span class="time">11:00</span><div class="appt ink"><div class="svc">Remplissage</div><div class="who">Léa M. · 1h00</div></div></div>
+          <div class="slot"><span class="time">14:00</span><div class="appt free" id="freeSlot"><span class="svc">Créneau libre</span><span class="plus">+</span></div></div>
+          <div class="slot"><span class="time">15:30</span><div class="appt terra"><div class="svc">Nail art — French</div><div class="who">Sarah B. · 1h15</div></div></div>
+          <div class="waitlist-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+            2 clientes en liste d'attente pour aujourd'hui
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Piliers -->
+  <section class="block" id="atouts">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Tout au même endroit</span>
+        <h2>Trois outils essentiels, une seule application</h2>
+        <p>Fini de jongler entre Instagram, votre carnet de rendez-vous et un tableur. Zoma centralise ce qui fait tourner votre activité.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="card reveal">
+          <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div>
+          <h3>Agenda intelligent</h3>
+          <p>Gérez vos rendez-vous par plages horaires, matin et après-midi, jour par jour. Une page de réservation en ligne permet à vos clientes de réserver elles-mêmes, 24h/24.</p>
+          <span class="more" data-anchor="demo">Voir dans la démo →</span>
+        </div>
+        <div class="card reveal" style="transition-delay:.08s">
+          <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h3>Messagerie client</h3>
+          <p>Échangez avec vos clientes directement dans Zoma, sans passer par vos DM Instagram. Chaque conversation est rattachée à la bonne fiche client.</p>
+          <span class="more" data-anchor="demo">Voir dans la démo →</span>
+        </div>
+        <div class="card reveal" style="transition-delay:.16s">
+          <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+          <h3>Fichier clients</h3>
+          <p>Toutes vos clientes, leur historique de prestations, leurs préférences et vos notes au même endroit. Vous reconnaissez chacune au premier coup d'œil.</p>
+          <span class="more" data-anchor="demo">Voir dans la démo →</span>
+        </div>
+      </div>
+
+      <div class="feat-row reveal">
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Liste d'attente automatique</b><small>Une annulation libère un créneau ? La première de la liste est prévenue automatiquement.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Page de réservation publique</b><small>Un lien à partager dans votre bio : vos clientes réservent selon vos disponibilités réelles.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Rappels de rendez-vous</b><small>Moins de rendez-vous oubliés, moins de trous dans votre journée.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Horaires sur-mesure</b><small>Définissez plusieurs plages par jour, vos pauses et vos jours de fermeture.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Historique des prestations</b><small>Retrouvez d'un coup ce que chaque cliente a fait, et quand.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Sur mobile et ordinateur</b><small>Votre activité vous suit, au salon comme à domicile.</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Démo -->
+  <section class="block" id="demo" style="padding-top:20px">
+    <div class="wrap">
+      <div class="demo-wrap">
+        <div class="demo-grid">
+          <div class="demo-copy reveal">
+            <span class="eyebrow" style="color:var(--terra)">Démo interactive</span>
+            <h2>Essayez Zoma, ici même</h2>
+            <p>Cliquez sur les onglets pour parcourir les trois espaces principaux. Aucune inscription nécessaire.</p>
+            <div class="demo-tabs">
+              <button class="demo-tab active" data-tab="agenda">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/></svg> Agenda
+              </button>
+              <button class="demo-tab" data-tab="chat">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> Messagerie
+              </button>
+              <button class="demo-tab" data-tab="clients">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Clientes
+              </button>
+            </div>
+          </div>
+
+          <div class="demo-screen reveal" style="transition-delay:.1s">
+            <!-- Panel agenda -->
+            <div class="demo-panel active" data-panel="agenda">
+              <div class="d-agenda">
+                <div class="hd"><h4>Cette semaine</h4><span style="font-size:.82rem;color:var(--taupe)">Juin 2025</span></div>
+                <div class="d-cols">
+                  <div class="d-col"><div class="dname">Lun 15</div>
+                    <div class="d-blk t"><b>Pose gel</b>Camille · 09:00</div>
+                    <div class="d-blk k"><b>Remplissage</b>Inès · 11:00</div>
+                    <div class="d-blk empty" data-book>+ Libre · 14:00</div>
+                  </div>
+                  <div class="d-col"><div class="dname">Mar 16</div>
+                    <div class="d-blk k"><b>Nail art</b>Sarah · 10:00</div>
+                    <div class="d-blk empty" data-book>+ Libre · 13:00</div>
+                    <div class="d-blk t"><b>Vernis semi</b>Léa · 16:00</div>
+                  </div>
+                  <div class="d-col"><div class="dname">Mer 17</div>
+                    <div class="d-blk t"><b>Dépose + pose</b>Marine · 09:30</div>
+                    <div class="d-blk empty" data-book>+ Libre · 12:00</div>
+                    <div class="d-blk k"><b>Remplissage</b>Julie · 15:00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Panel chat -->
+            <div class="demo-panel" data-panel="chat">
+              <div class="d-chat">
+                <div class="chd"><div class="av">L</div><div><b>Léa Martin</b><small>● En ligne</small></div></div>
+                <div class="d-msgs" id="dMsgs">
+                  <div class="bub them">Bonjour ! Est-ce qu'il vous reste un créneau jeudi pour un remplissage ? 💅</div>
+                  <div class="bub me">Bonjour Léa ! Oui, j'ai de la place à 14h ou 16h30 jeudi 😊</div>
+                  <div class="bub them">Parfait, je prends 16h30 alors</div>
+                  <div class="bub me">C'est noté, je vous l'ai ajouté à l'agenda. À jeudi !</div>
+                </div>
+                <div class="d-input">
+                  <input id="dChatInput" type="text" placeholder="Écrire un message…" />
+                  <button id="dChatSend" aria-label="Envoyer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                </div>
+              </div>
+            </div>
+            <!-- Panel clients -->
+            <div class="demo-panel" data-panel="clients">
+              <div class="d-clients">
+                <div class="d-list" id="dList">
+                  <div class="d-li sel" data-c="0"><span class="ci">CD</span><div><b>Camille Dubois</b><small>Dernière visite : 12 juin</small></div></div>
+                  <div class="d-li" data-c="1"><span class="ci">LM</span><div><b>Léa Martin</b><small>Dernière visite : 5 juin</small></div></div>
+                  <div class="d-li" data-c="2"><span class="ci">SB</span><div><b>Sarah Benali</b><small>Dernière visite : 28 mai</small></div></div>
+                  <div class="d-li" data-c="3"><span class="ci">MR</span><div><b>Marine Roux</b><small>Dernière visite : 20 mai</small></div></div>
+                </div>
+                <div class="d-detail" id="dDetail"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pour qui -->
+  <section class="who-band">
+    <div class="wrap block" style="padding:60px 0">
+      <div class="section-head reveal">
+        <span class="eyebrow">Pour qui ?</span>
+        <h2>Conçu pour les indépendantes de la beauté</h2>
+        <p>Vous travaillez seule, à votre compte ? Zoma est fait pour vous.</p>
+      </div>
+      <div class="chips reveal">
+        <span class="chip"><span class="d"></span>Prothésiste ongulaire</span>
+        <span class="chip"><span class="d"></span>Technicienne du regard</span>
+        <span class="chip"><span class="d"></span>Tatoueur·euse</span>
+        <span class="chip"><span class="d"></span>Esthéticienne</span>
+        <span class="chip"><span class="d"></span>Maquilleuse</span>
+        <span class="chip"><span class="d"></span>Coiffeuse à domicile</span>
+        <span class="chip"><span class="d"></span>Praticienne bien-être</span>
+        <span class="chip"><span class="d"></span>Barbier</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="cta-inner reveal">
+        <h2>Reprenez le contrôle de votre agenda</h2>
+        <p>30 jours pour tout essayer, sans carte bancaire. Vous gardez vos données, vous arrêtez quand vous voulez.</p>
+        <button class="btn btn-terra btn-lg" data-go="tarifs">Commencer gratuitement</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ PAGE TARIFS ============ -->
+<main class="page" id="page-tarifs">
+  <section class="price-hero">
+    <div class="wrap">
+      <div class="founder reveal">🎉 Offre membre fondateur — <b>&nbsp;-30 % à vie</b>&nbsp; pour les 100 premières inscrites</div>
+      <h1 class="reveal">Un tarif simple, sans surprise</h1>
+      <p class="reveal">Deux formules, 30 jours d'essai gratuit, sans carte bancaire. Changez ou annulez à tout moment.</p>
+
+      <div class="toggle reveal" role="tablist" aria-label="Période de facturation">
+        <button class="on" id="tgMonth">Mensuel</button>
+        <button id="tgYear">Annuel <span class="save-tag">−20 %</span></button>
+      </div>
+
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pname">Essentiel</div>
+          <div class="pdesc">L'essentiel pour gérer vos rendez-vous et vos clientes sans effort.</div>
+          <div class="price"><span class="amt" data-m="19" data-y="15">19 €</span><span class="per">/ mois</span></div>
+          <div class="billed" data-bill="">Facturé mensuellement</div>
+          <button class="btn btn-ghost" data-go="contact">Démarrer l'essai gratuit</button>
+          <ul class="plist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Agenda & gestion des rendez-vous</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Page de réservation en ligne</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Fichier clients & historique</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels de rendez-vous</li>
+            <li class="muted"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="12" x2="19" y2="12"/></svg> Messagerie client intégrée</li>
+            <li class="muted"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="12" x2="19" y2="12"/></svg> Liste d'attente automatique</li>
+          </ul>
+        </div>
+
+        <div class="plan featured reveal" style="transition-delay:.08s">
+          <span class="badge-pop">Le plus choisi</span>
+          <div class="pname">Pro</div>
+          <div class="pdesc">Toute la puissance de Zoma pour développer votre activité.</div>
+          <div class="price"><span class="amt" data-m="34" data-y="27">34 €</span><span class="per">/ mois</span></div>
+          <div class="billed" data-bill="">Facturé mensuellement</div>
+          <button class="btn btn-terra" data-go="contact">Démarrer l'essai gratuit</button>
+          <ul class="plist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> <b style="font-weight:600">Tout le plan Essentiel, et&nbsp;:</b></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Messagerie client intégrée</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Liste d'attente automatique</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Plages horaires multiples par jour</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Statistiques de votre activité</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Support prioritaire</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="price-foot reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--terra-deep)" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+        Essai de 30 jours sans carte bancaire · Sans engagement · Données hébergées en Europe
+      </div>
+
+      <div class="faq reveal">
+        <h2>Questions fréquentes</h2>
+        <details class="qa"><summary>Ai-je besoin d'une carte bancaire pour l'essai ?<span class="pm">+</span></summary><div class="ans">Non. Vous créez votre compte et profitez de 30 jours complets sans rien saisir. Vous ne choisissez une formule que si Zoma vous convient.</div></details>
+        <details class="qa"><summary>Puis-je changer de formule plus tard ?<span class="pm">+</span></summary><div class="ans">Oui, à tout moment depuis votre espace. Le changement prend effet immédiatement et la facturation est ajustée au prorata.</div></details>
+        <details class="qa"><summary>Que devient l'offre membre fondateur ?<span class="pm">+</span></summary><div class="ans">Les 100 premières inscrites conservent −30 % sur leur abonnement, aussi longtemps qu'elles restent clientes. C'est notre façon de remercier les premières à nous faire confiance.</div></details>
+        <details class="qa"><summary>Mes données sont-elles en sécurité ?<span class="pm">+</span></summary><div class="ans">Vos données et celles de vos clientes sont hébergées en Europe et vous appartiennent. Vous pouvez les exporter ou supprimer votre compte quand vous le souhaitez.</div></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ PAGE CONTACT ============ -->
+<main class="page" id="page-contact">
+  <section>
+    <div class="wrap contact-grid">
+      <div class="contact-intro reveal">
+        <span class="eyebrow">Parlons-en</span>
+        <h1>Une question ? On vous répond.</h1>
+        <p>Que vous hésitiez encore ou que vous vouliez une démo personnalisée, écrivez-nous. Une vraie personne vous répond — généralement sous 24 h.</p>
+        <div class="contact-info">
+          <div class="ci-row">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></div>
+            <div><b>Par e-mail</b><small>bonjour@zoma.fr</small></div>
+          </div>
+          <div class="ci-row">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+            <div><b>Sur les réseaux</b><small>@zoma.app sur Instagram & TikTok</small></div>
+          </div>
+          <div class="ci-row">
+            <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+            <div><b>Temps de réponse</b><small>Sous 24 h, du lundi au vendredi</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal" style="transition-delay:.08s">
+        <div id="formFields">
+          <div class="field">
+            <label for="cname">Votre nom</label>
+            <input id="cname" type="text" placeholder="Camille Dubois" />
+          </div>
+          <div class="field">
+            <label for="cmail">E-mail</label>
+            <input id="cmail" type="email" placeholder="vous@exemple.fr" />
+          </div>
+          <div class="field">
+            <label for="cjob">Votre activité</label>
+            <select id="cjob">
+              <option value="">Sélectionnez…</option>
+              <option>Prothésiste ongulaire</option>
+              <option>Technicienne du regard</option>
+              <option>Tatoueur·euse</option>
+              <option>Esthéticienne</option>
+              <option>Autre métier de la beauté / bien-être</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cmsg">Votre message</label>
+            <textarea id="cmsg" placeholder="Dites-nous comment on peut vous aider…"></textarea>
+          </div>
+          <button class="btn btn-terra btn-lg" id="sendBtn">Envoyer le message</button>
+        </div>
+        <div class="form-ok" id="formOk">
+          <div class="ok-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Message envoyé !</h3>
+          <p>Merci, on revient vers vous très vite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="brand"><span class="a">Zo</span><span class="b">ma</span></div>
+        <p class="tag">L'outil de gestion tout-en-un des indépendantes de la beauté et du bien-être. Agenda, messagerie et fichier clients, simplement.</p>
+      </div>
+      <div>
+        <h5>Produit</h5>
+        <a class="fl" data-anchor="atouts">Fonctionnalités</a>
+        <a class="fl" data-anchor="demo">Démo</a>
+        <a class="fl" data-go="tarifs">Tarifs</a>
+      </div>
+      <div>
+        <h5>Entreprise</h5>
+        <a class="fl" data-go="contact">Contact</a>
+        <a class="fl" data-go="contact">Démo personnalisée</a>
+        <a class="fl" data-go="tarifs">Devenir membre fondateur</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2025 Zoma. Tous droits réservés.</span>
+      <span>Fait avec soin en France · Données hébergées en Europe</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Données clientes (démo) ---------- */
+  const clients = [
+    {i:"CD",n:"Camille Dubois",since:"Cliente depuis mars 2024",visits:14,spent:"890 €",note:"Préfère les poses en gel, couleurs nude. Allergique à un vernis testé en janvier."},
+    {i:"LM",n:"Léa Martin",since:"Cliente depuis sept. 2024",visits:6,spent:"310 €",note:"Vient tous les 3 semaines pour un remplissage. Aime le nail art discret."},
+    {i:"SB",n:"Sarah Benali",since:"Cliente depuis nov. 2024",visits:4,spent:"245 €",note:"Réserve souvent le samedi. French manucure classique."},
+    {i:"MR",n:"Marine Roux",since:"Cliente depuis janv. 2025",visits:3,spent:"175 €",note:"Nouvelle cliente, ponctuelle. Sensible aux limes électriques — y aller doucement."}
+  ];
+  function renderClient(idx){
+    const c = clients[idx];
+    document.getElementById('dDetail').innerHTML = `
+      <div class="big">${c.i}</div>
+      <h4>${c.n}</h4>
+      <div class="sub">${c.since}</div>
+      <div class="d-stats">
+        <div class="d-stat"><div class="n">${c.visits}</div><div class="l">Rendez-vous</div></div>
+        <div class="d-stat"><div class="n">${c.spent}</div><div class="l">Total dépensé</div></div>
+      </div>
+      <div class="d-note"><span>Note personnelle</span>${c.note}</div>`;
+  }
+  renderClient(0);
+  document.getElementById('dList').addEventListener('click', e=>{
+    const li = e.target.closest('.d-li'); if(!li) return;
+    document.querySelectorAll('.d-li').forEach(x=>x.classList.remove('sel'));
+    li.classList.add('sel');
+    renderClient(+li.dataset.c);
+  });
+
+  /* ---------- Démo : onglets ---------- */
+  document.querySelectorAll('.demo-tab').forEach(t=>{
+    t.addEventListener('click', ()=>{
+      document.querySelectorAll('.demo-tab').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      const k = t.dataset.tab;
+      document.querySelectorAll('.demo-panel').forEach(p=>p.classList.toggle('active', p.dataset.panel===k));
+    });
+  });
+
+  /* ---------- Démo : chat ---------- */
+  const chatInput = document.getElementById('dChatInput');
+  const chatSend = document.getElementById('dChatSend');
+  const msgs = document.getElementById('dMsgs');
+  function sendChat(){
+    const v = chatInput.value.trim(); if(!v) return;
+    const me = document.createElement('div'); me.className='bub me'; me.textContent=v; msgs.appendChild(me);
+    chatInput.value=''; msgs.scrollTop = msgs.scrollHeight;
+    setTimeout(()=>{
+      const t = document.createElement('div'); t.className='bub them'; t.textContent="Super, merci ! À très vite 😊"; msgs.appendChild(t);
+      msgs.scrollTop = msgs.scrollHeight;
+    }, 700);
+  }
+  chatSend.addEventListener('click', sendChat);
+  chatInput.addEventListener('keydown', e=>{ if(e.key==='Enter') sendChat(); });
+
+  /* ---------- Démo : créneaux libres ---------- */
+  document.querySelectorAll('[data-book]').forEach(b=>{
+    b.addEventListener('click', ()=>{ b.style.background='var(--rose)'; b.style.borderStyle='solid'; b.style.color='var(--terra-deep)'; b.innerHTML='✓ Réservé'; });
+  });
+  const freeSlot = document.getElementById('freeSlot');
+  if(freeSlot){ freeSlot.addEventListener('click', ()=>{ freeSlot.classList.remove('free'); freeSlot.classList.add('terra'); freeSlot.innerHTML='<div class="svc">Nouveau rendez-vous</div><div class="who">Cliquez pour confirmer</div>'; }); }
+
+  /* ---------- Tarifs : toggle ---------- */
+  const tgMonth = document.getElementById('tgMonth'), tgYear = document.getElementById('tgYear');
+  function setPeriod(year){
+    tgMonth.classList.toggle('on', !year); tgYear.classList.toggle('on', year);
+    document.querySelectorAll('.amt').forEach(a=>{ a.textContent = (year? a.dataset.y : a.dataset.m) + ' €'; });
+    document.querySelectorAll('[data-bill]').forEach((el,i)=>{
+      const amount = year ? [180,324][i] : null;
+      el.textContent = year ? `Soit ${amount} € / an, facturé annuellement` : 'Facturé mensuellement';
+    });
+  }
+  tgMonth.addEventListener('click', ()=>setPeriod(false));
+  tgYear.addEventListener('click', ()=>setPeriod(true));
+
+  /* ---------- Contact : envoi ---------- */
+  document.getElementById('sendBtn').addEventListener('click', ()=>{
+    const name = document.getElementById('cname').value.trim();
+    const mail = document.getElementById('cmail').value.trim();
+    if(!name || !mail){
+      [['cname',name],['cmail',mail]].forEach(([id,v])=>{ if(!v) document.getElementById(id).style.borderColor='var(--terra-deep)'; });
+      return;
+    }
+    document.getElementById('formFields').style.display='none';
+    document.getElementById('formOk').classList.add('show');
+  });
+
+  /* ---------- Routing (pages) ---------- */
+  function goPage(name){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    const el = document.getElementById('page-'+name);
+    (el||document.getElementById('page-accueil')).classList.add('active');
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant':'auto'});
+    closeMenu();
+    // retrigger reveals on the now-visible page
+    requestAnimationFrame(()=>observeReveals());
+  }
+  function goAnchor(id){
+    goPage('accueil');
+    setTimeout(()=>{ const t=document.getElementById(id); if(t) t.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+  }
+  document.addEventListener('click', e=>{
+    const g = e.target.closest('[data-go]'); const a = e.target.closest('[data-anchor]');
+    if(g){ goPage(g.dataset.go); }
+    else if(a){ goAnchor(a.dataset.anchor); }
+  });
+
+  /* ---------- Menu mobile ---------- */
+  const menu = document.getElementById('mobileMenu'), burger = document.getElementById('burger');
+  function closeMenu(){ menu.style.display='none'; }
+  burger.addEventListener('click', ()=>{ menu.style.display = menu.style.display==='flex' ? 'none':'flex'; });
+
+  /* ---------- Nav scroll state ---------- */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', ()=>{ nav.classList.toggle('scrolled', window.scrollY>10); });
+
+  /* ---------- Reveal on scroll ---------- */
+  let io;
+  function observeReveals(){
+    if(!io){
+      io = new IntersectionObserver(entries=>{
+        entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    }
+    document.querySelectorAll('.page.active .reveal:not(.in)').forEach(el=>io.observe(el));
+  }
+  observeReveals();
+</script>
+</body>
+</html>
