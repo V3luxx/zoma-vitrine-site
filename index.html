@@ -163,72 +163,6 @@
   .feat b{font-weight:600;font-size:.97rem}
   .feat small{display:block;color:var(--taupe);font-size:.87rem;line-height:1.45}
 
-  /* ---------- Démo ---------- */
-  .demo-wrap{background:var(--ink);border-radius:30px;padding:48px;margin-top:44px;position:relative;overflow:hidden}
-  .demo-wrap::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(107,82,200,.28),transparent 70%)}
-  .demo-grid{display:grid;grid-template-columns:300px 1fr;gap:38px;align-items:start;position:relative;z-index:1}
-  .demo-copy h2{color:var(--cream);font-size:2.1rem;margin:.9rem 0 .8rem}
-  .demo-copy p{color:rgba(250,248,246,.72);font-size:1.02rem}
-  .demo-tabs{display:flex;flex-direction:column;gap:8px;margin-top:26px}
-  .demo-tab{
-    display:flex;align-items:center;gap:.8rem;text-align:left;width:100%;
-    background:transparent;border:1px solid rgba(250,248,246,.16);color:rgba(250,248,246,.82);
-    padding:.85rem 1rem;border-radius:13px;cursor:pointer;font-family:var(--font-body);font-weight:500;font-size:.96rem;
-    transition:background .25s ease,border-color .25s ease,color .25s ease;
-  }
-  .demo-tab svg{flex:none;opacity:.8}
-  .demo-tab:hover{border-color:rgba(107,82,200,.5);color:#fff}
-  .demo-tab.active{background:var(--terra);border-color:var(--terra);color:#fff}
-  .demo-tab.active svg{opacity:1}
-  .demo-screen{background:var(--cream);border-radius:18px;min-height:430px;box-shadow:var(--shadow);overflow:hidden;position:relative}
-  .demo-panel{display:none;animation:fade .45s ease}
-  .demo-panel.active{display:block}
-
-  /* demo: agenda */
-  .d-agenda{padding:22px}
-  .d-agenda .hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-  .d-agenda .hd h4{font-size:1.15rem}
-  .d-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .d-col .dname{font-size:.78rem;color:var(--taupe);text-align:center;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-  .d-blk{border-radius:11px;padding:9px 10px;margin-bottom:8px;font-size:.78rem;line-height:1.3;border:1px solid transparent}
-  .d-blk.t{background:var(--rose);border-color:#d9d0f0;color:var(--terra-deep)}
-  .d-blk.k{background:#edeaf6;border-color:var(--line)}
-  .d-blk b{display:block;font-weight:600}
-  .d-blk.empty{background:#fff;border:1px dashed #d6cdef;color:var(--taupe);text-align:center;cursor:pointer;transition:.2s}
-  .d-blk.empty:hover{border-color:var(--terra);color:var(--terra-deep)}
-
-  /* demo: chat */
-  .d-chat{display:flex;flex-direction:column;height:430px}
-  .d-chat .chd{display:flex;align-items:center;gap:.7rem;padding:14px 18px;border-bottom:1px solid var(--line)}
-  .d-chat .av{width:38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-weight:600;font-family:var(--font-display)}
-  .d-chat .chd b{font-size:.96rem}.d-chat .chd small{color:#3f9a6b;font-size:.78rem}
-  .d-msgs{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px}
-  .bub{max-width:78%;padding:.6rem .85rem;border-radius:15px;font-size:.9rem;line-height:1.4}
-  .bub.them{background:#fff;border:1px solid var(--line);border-bottom-left-radius:5px;align-self:flex-start}
-  .bub.me{background:var(--terra);color:#fff;border-bottom-right-radius:5px;align-self:flex-end}
-  .d-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
-  .d-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem 1rem;font-family:var(--font-body);font-size:.9rem;background:#fff}
-  .d-input input:focus{outline:none;border-color:var(--terra)}
-  .d-input button{border:none;background:var(--ink);color:#fff;border-radius:50%;width:40px;height:40px;cursor:pointer;display:grid;place-items:center}
-
-  /* demo: clients */
-  .d-clients{display:grid;grid-template-columns:1fr 1.1fr;height:430px}
-  .d-list{border-right:1px solid var(--line);overflow-y:auto}
-  .d-li{display:flex;align-items:center;gap:.7rem;padding:13px 16px;cursor:pointer;border-bottom:1px solid var(--line);transition:background .15s}
-  .d-li:hover{background:var(--rose-2)}
-  .d-li.sel{background:var(--rose)}
-  .d-li .ci{width:34px;height:34px;border-radius:50%;background:#edeaf6;color:var(--ink);display:grid;place-items:center;font-weight:600;font-size:.85rem;flex:none}
-  .d-li b{font-size:.9rem;display:block}.d-li small{font-size:.76rem;color:var(--taupe)}
-  .d-detail{padding:22px}
-  .d-detail .big{width:58px;height:58px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin-bottom:14px}
-  .d-detail h4{font-size:1.3rem}.d-detail .sub{color:var(--taupe);font-size:.86rem;margin-bottom:18px}
-  .d-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
-  .d-stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
-  .d-stat .n{font-family:var(--font-display);font-weight:700;font-size:1.4rem;color:var(--terra-deep)}
-  .d-stat .l{font-size:.76rem;color:var(--taupe)}
-  .d-note{background:var(--rose-2);border:1px solid #ded6f2;border-radius:12px;padding:12px 14px;font-size:.86rem;color:var(--ink)}
-  .d-note span{display:block;font-size:.72rem;color:var(--taupe);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;font-weight:600}
-
   /* ---------- Pour qui ---------- */
   .who-band{background:var(--rose-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -325,9 +259,6 @@
     .hero-grid{grid-template-columns:1fr;gap:40px}
     .pillars{grid-template-columns:1fr}
     .feat-row{grid-template-columns:1fr}
-    .demo-grid{grid-template-columns:1fr}
-    .demo-tabs{flex-direction:row;flex-wrap:wrap}
-    .demo-tab{flex:1;min-width:140px;justify-content:center}
     .plans{grid-template-columns:1fr;max-width:420px}
     .contact-grid{grid-template-columns:1fr;gap:34px}
     .ft-grid{grid-template-columns:1fr;gap:26px}
@@ -335,10 +266,7 @@
   @media(max-width:740px){
     .nav-links,.nav-cta .btn{display:none}
     .burger{display:block}
-    .demo-wrap{padding:28px}
     .cta-inner{padding:42px 26px}
-    .d-clients{grid-template-columns:1fr}
-    .d-list{display:none}
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -355,8 +283,7 @@
     <div class="brand" data-go="accueil"><img class="logo" src="/zoma-favicon.svg" alt="Logo Zoma" /><span class="a">Zo</span><span class="b">ma</span></div>
     <nav class="nav-links">
       <a class="link" data-anchor="atouts">Fonctionnalités</a>
-      <a class="link" data-anchor="demo">Démo</a>
-      <a class="link" data-go="tarifs">Tarifs</a>
+      <a class="link" data-anchor="tarifs">Tarifs</a>
       <a class="link" data-go="contact">Contact</a>
     </nav>
     <div class="nav-cta">
@@ -369,8 +296,7 @@
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a data-anchor="atouts">Fonctionnalités</a>
-    <a data-anchor="demo">Démo</a>
-    <a data-go="tarifs">Tarifs</a>
+    <a data-anchor="tarifs">Tarifs</a>
     <a data-go="contact">Contact</a>
     <a class="btn btn-terra" href="https://app.zoma-app.fr/">Démarrer l'essai gratuit</a>
   </div>
@@ -387,7 +313,7 @@
         <p class="lead">Agenda, réservations en ligne, messagerie et fichier clients : tout ce qui fait tourner votre activité réuni dans une seule app, simple et abordable. Vous gagnez du temps, vos clients réservent en autonomie, et vous gardez l'esprit libre pour ce que vous faites de mieux.</p>
         <div class="hero-actions">
           <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr">Démarrer 30 jours gratuits</a>
-          <button class="btn btn-ghost btn-lg" data-anchor="demo">Voir la démo</button>
+          <button class="btn btn-ghost btn-lg" data-anchor="tarifs">Voir les tarifs</button>
         </div>
         <div class="trust">
           <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Sans carte bancaire</span>
@@ -433,19 +359,19 @@
           <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div>
           <h3>Agenda intelligent</h3>
           <p>Gérez vos rendez-vous par plages horaires personnalisées. Une page de réservation en ligne permet à vos clients de réserver eux-mêmes, 24h/24, selon vos disponibilités réelles.</p>
-          <span class="more" data-anchor="demo">Voir dans la démo →</span>
+          <span class="more" data-anchor="tarifs">Voir les tarifs →</span>
         </div>
         <div class="card reveal" style="transition-delay:.08s">
           <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
           <h3>Messagerie client</h3>
           <p>Échangez avec vos clients directement dans Zoma, sans éparpiller vos conversations entre SMS, e-mails et réseaux sociaux. Chaque échange est rattaché automatiquement à la bonne fiche client.</p>
-          <span class="more" data-anchor="demo">Voir dans la démo →</span>
+          <span class="more" data-anchor="tarifs">Voir les tarifs →</span>
         </div>
         <div class="card reveal" style="transition-delay:.16s">
           <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
           <h3>Fichier clients</h3>
           <p>Tous vos clients, leur historique de prestations, leurs préférences et vos notes personnelles au même endroit. Vous reconnaissez chaque client au premier coup d'œil.</p>
-          <span class="more" data-anchor="demo">Voir dans la démo →</span>
+          <span class="more" data-anchor="tarifs">Voir les tarifs →</span>
         </div>
       </div>
 
@@ -460,82 +386,67 @@
     </div>
   </section>
 
-  <!-- Démo -->
-  <section class="block" id="demo" style="padding-top:20px">
+  <!-- Tarifs -->
+  <section class="price-hero" id="tarifs">
     <div class="wrap">
-      <div class="demo-wrap">
-        <div class="demo-grid">
-          <div class="demo-copy reveal">
-            <span class="eyebrow" style="color:var(--terra)">Démo interactive</span>
-            <h2>Essayez Zoma, ici même</h2>
-            <p>Cliquez sur les onglets pour parcourir les trois espaces principaux. Aucune inscription nécessaire.</p>
-            <div class="demo-tabs">
-              <button class="demo-tab active" data-tab="agenda">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/></svg> Agenda
-              </button>
-              <button class="demo-tab" data-tab="chat">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> Messagerie
-              </button>
-              <button class="demo-tab" data-tab="clients">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Clients
-              </button>
-            </div>
-          </div>
+      <div class="founder reveal">🎉 Offre membre fondateur <b>&nbsp;-30 % à vie</b>&nbsp; pour les 100 premiers inscrits</div>
+      <h2 class="reveal">Un tarif simple, sans surprise</h2>
+      <p class="reveal">Deux formules, 30 jours d'essai gratuit, sans carte bancaire. Changez ou annulez à tout moment.</p>
 
-          <div class="demo-screen reveal" style="transition-delay:.1s">
-            <!-- Panel agenda -->
-            <div class="demo-panel active" data-panel="agenda">
-              <div class="d-agenda">
-                <div class="hd"><h4>Cette semaine</h4><span style="font-size:.82rem;color:var(--taupe)">Juin 2025</span></div>
-                <div class="d-cols">
-                  <div class="d-col"><div class="dname">Lun 15</div>
-                    <div class="d-blk t"><b>Séance</b>Camille · 09:00</div>
-                    <div class="d-blk k"><b>Consultation</b>Inès · 11:00</div>
-                    <div class="d-blk empty" data-book>+ Libre · 14:00</div>
-                  </div>
-                  <div class="d-col"><div class="dname">Mar 16</div>
-                    <div class="d-blk k"><b>Atelier</b>Sarah · 10:00</div>
-                    <div class="d-blk empty" data-book>+ Libre · 13:00</div>
-                    <div class="d-blk t"><b>Suivi</b>Léa · 16:00</div>
-                  </div>
-                  <div class="d-col"><div class="dname">Mer 17</div>
-                    <div class="d-blk t"><b>Découverte</b>Marine · 09:30</div>
-                    <div class="d-blk empty" data-book>+ Libre · 12:00</div>
-                    <div class="d-blk k"><b>Rendez-vous</b>Julie · 15:00</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Panel chat -->
-            <div class="demo-panel" data-panel="chat">
-              <div class="d-chat">
-                <div class="chd"><div class="av">L</div><div><b>Léa Martin</b><small>● En ligne</small></div></div>
-                <div class="d-msgs" id="dMsgs">
-                  <div class="bub them">Bonjour ! Est-ce qu'il vous reste un créneau jeudi pour une séance ? 🙂</div>
-                  <div class="bub me">Bonjour Léa ! Oui, j'ai de la place à 14h ou 16h30 jeudi 😊</div>
-                  <div class="bub them">Parfait, je prends 16h30 alors</div>
-                  <div class="bub me">C'est noté, je vous l'ai ajouté à l'agenda. À jeudi !</div>
-                </div>
-                <div class="d-input">
-                  <input id="dChatInput" type="text" placeholder="Écrire un message…" />
-                  <button id="dChatSend" aria-label="Envoyer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
-                </div>
-              </div>
-            </div>
-            <!-- Panel clients -->
-            <div class="demo-panel" data-panel="clients">
-              <div class="d-clients">
-                <div class="d-list" id="dList">
-                  <div class="d-li sel" data-c="0"><span class="ci">JD</span><div><b>Jean Dupont</b><small>Dernière visite : 12 juin</small></div></div>
-                  <div class="d-li" data-c="1"><span class="ci">LM</span><div><b>Léa Martin</b><small>Dernière visite : 5 juin</small></div></div>
-                  <div class="d-li" data-c="2"><span class="ci">SB</span><div><b>Sarah Benali</b><small>Dernière visite : 28 mai</small></div></div>
-                  <div class="d-li" data-c="3"><span class="ci">MR</span><div><b>Marine Roux</b><small>Dernière visite : 20 mai</small></div></div>
-                </div>
-                <div class="d-detail" id="dDetail"></div>
-              </div>
-            </div>
-          </div>
+      <div class="toggle reveal" role="tablist" aria-label="Période de facturation">
+        <button class="on" id="tgMonth">Mensuel</button>
+        <button id="tgYear">Annuel <span class="save-tag">−20 %</span></button>
+      </div>
+
+      <div class="plans">
+        <div class="plan reveal">
+          <div class="pname">Essentiel</div>
+          <div class="pdesc">L'essentiel pour ne plus jongler entre téléphone, mail et agenda.</div>
+          <div class="price"><span class="amt" data-m="19,99" data-y="15,99">19,99 €</span><span class="per">/ mois</span></div>
+          <div class="billed" data-bill="">Facturé mensuellement</div>
+          <a class="btn btn-ghost" href="https://app.zoma-app.fr">Démarrer l'essai gratuit</a>
+          <ul class="plist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Page de réservation en ligne 24h/24</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Agenda & confirmation automatique</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels de rendez-vous par e-mail</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Fichier clients & historique</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Synchronisation Google & Apple Calendar</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Messagerie client intégrée</li>
+            <li class="muted"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="12" x2="19" y2="12"/></svg> Paiement de l'acompte à la réservation</li>
+            <li class="muted"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="12" x2="19" y2="12"/></svg> Rappels par SMS</li>
+          </ul>
         </div>
+
+        <div class="plan featured reveal" style="transition-delay:.08s">
+          <span class="badge-pop">Le plus choisi</span>
+          <div class="pname">Pro</div>
+          <div class="pdesc">Encaissez dès la réservation et pilotez votre activité.</div>
+          <div class="price"><span class="amt" data-m="34,99" data-y="27,99">34,99 €</span><span class="per">/ mois</span></div>
+          <div class="billed" data-bill="">Facturé mensuellement</div>
+          <a class="btn btn-terra" href="https://app.zoma-app.fr">Démarrer l'essai gratuit</a>
+          <ul class="plist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> <b style="font-weight:600">Tout le plan Essentiel, et&nbsp;:</b></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Paiement de l'acompte à la réservation</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels par SMS</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Statistiques & pilotage de votre activité</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Plages horaires multiples par jour</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Page produit</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Support prioritaire</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="price-foot reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--terra-deep)" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+        Essai de 30 jours sans carte bancaire · Sans engagement · Données hébergées en Europe
+      </div>
+
+      <div class="faq reveal">
+        <h2>Questions fréquentes</h2>
+        <details class="qa"><summary>Ai-je besoin d'une carte bancaire pour l'essai ?<span class="pm">+</span></summary><div class="ans">Non. Vous créez votre compte et profitez de 30 jours complets sans rien saisir. Vous ne choisissez une formule que si Zoma vous convient.</div></details>
+        <details class="qa"><summary>Puis-je changer de formule plus tard ?<span class="pm">+</span></summary><div class="ans">Oui, à tout moment depuis votre espace. Le changement prend effet immédiatement et la facturation est ajustée au prorata.</div></details>
+        <details class="qa"><summary>Que devient l'offre membre fondateur ?<span class="pm">+</span></summary><div class="ans">Les 100 premiers inscrits conservent −30 % sur leur abonnement, aussi longtemps qu'ils restent clients. C'est notre façon de remercier ceux qui nous font confiance dès le départ.</div></details>
+        <details class="qa"><summary>Mes données sont-elles en sécurité ?<span class="pm">+</span></summary><div class="ans">Vos données et celles de vos clients sont hébergées en Europe et vous appartiennent. Vous pouvez les exporter ou supprimer votre compte quand vous le souhaitez.</div></details>
       </div>
     </div>
   </section>
@@ -572,70 +483,6 @@
         <h2>Reprenez le contrôle de votre activité</h2>
         <p>30 jours pour tout essayer, sans carte bancaire. Vous gardez vos données, vous arrêtez quand vous voulez.</p>
         <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr">Commencer gratuitement</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ============ PAGE TARIFS ============ -->
-<main class="page" id="page-tarifs">
-  <section class="price-hero">
-    <div class="wrap">
-      <div class="founder reveal">🎉 Offre membre fondateur <b>&nbsp;-30 % à vie</b>&nbsp; pour les 100 premiers inscrits</div>
-      <h1 class="reveal">Un tarif simple, sans surprise</h1>
-      <p class="reveal">Deux formules, 30 jours d'essai gratuit, sans carte bancaire. Changez ou annulez à tout moment.</p>
-
-      <div class="toggle reveal" role="tablist" aria-label="Période de facturation">
-        <button class="on" id="tgMonth">Mensuel</button>
-        <button id="tgYear">Annuel <span class="save-tag">−20 %</span></button>
-      </div>
-
-      <div class="plans">
-        <div class="plan reveal">
-          <div class="pname">Essentiel</div>
-          <div class="pdesc">L'essentiel pour gérer vos rendez-vous et vos clients sans effort.</div>
-          <div class="price"><span class="amt" data-m="19" data-y="15">19 €</span><span class="per">/ mois</span></div>
-          <div class="billed" data-bill="">Facturé mensuellement</div>
-          <a class="btn btn-ghost" href="https://app.zoma-app.fr">Démarrer l'essai gratuit</a>
-          <ul class="plist">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Agenda & gestion des rendez-vous</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Page de réservation en ligne</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Fichier clients & historique</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels de rendez-vous</li>
-            <li class="muted"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="12" x2="19" y2="12"/></svg> Messagerie client intégrée</li>
-            <li class="muted"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="5" y1="12" x2="19" y2="12"/></svg> Liste d'attente automatique</li>
-          </ul>
-        </div>
-
-        <div class="plan featured reveal" style="transition-delay:.08s">
-          <span class="badge-pop">Le plus choisi</span>
-          <div class="pname">Pro</div>
-          <div class="pdesc">Toute la puissance de Zoma pour développer votre activité.</div>
-          <div class="price"><span class="amt" data-m="34" data-y="27">34 €</span><span class="per">/ mois</span></div>
-          <div class="billed" data-bill="">Facturé mensuellement</div>
-          <a class="btn btn-terra" href="https://app.zoma-app.fr">Démarrer l'essai gratuit</a>
-          <ul class="plist">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> <b style="font-weight:600">Tout le plan Essentiel, et&nbsp;:</b></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Messagerie client intégrée</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Liste d'attente automatique</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Plages horaires multiples par jour</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Statistiques de votre activité</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Support prioritaire</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="price-foot reveal">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--terra-deep)" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-        Essai de 30 jours sans carte bancaire · Sans engagement · Données hébergées en Europe
-      </div>
-
-      <div class="faq reveal">
-        <h2>Questions fréquentes</h2>
-        <details class="qa"><summary>Ai-je besoin d'une carte bancaire pour l'essai ?<span class="pm">+</span></summary><div class="ans">Non. Vous créez votre compte et profitez de 30 jours complets sans rien saisir. Vous ne choisissez une formule que si Zoma vous convient.</div></details>
-        <details class="qa"><summary>Puis-je changer de formule plus tard ?<span class="pm">+</span></summary><div class="ans">Oui, à tout moment depuis votre espace. Le changement prend effet immédiatement et la facturation est ajustée au prorata.</div></details>
-        <details class="qa"><summary>Que devient l'offre membre fondateur ?<span class="pm">+</span></summary><div class="ans">Les 100 premiers inscrits conservent −30 % sur leur abonnement, aussi longtemps qu'ils restent clients. C'est notre façon de remercier ceux qui nous font confiance dès le départ.</div></details>
-        <details class="qa"><summary>Mes données sont-elles en sécurité ?<span class="pm">+</span></summary><div class="ans">Vos données et celles de vos clients sont hébergées en Europe et vous appartiennent. Vous pouvez les exporter ou supprimer votre compte quand vous le souhaitez.</div></details>
       </div>
     </div>
   </section>
@@ -718,14 +565,13 @@
       <div>
         <h5>Produit</h5>
         <a class="fl" data-anchor="atouts">Fonctionnalités</a>
-        <a class="fl" data-anchor="demo">Démo</a>
-        <a class="fl" data-go="tarifs">Tarifs</a>
+        <a class="fl" data-anchor="tarifs">Tarifs</a>
       </div>
       <div>
         <h5>Entreprise</h5>
         <a class="fl" data-go="contact">Contact</a>
         <a class="fl" data-go="contact">Démo personnalisée</a>
-        <a class="fl" data-go="tarifs">Devenir membre fondateur</a>
+        <a class="fl" data-anchor="tarifs">Devenir membre fondateur</a>
       </div>
     </div>
     <div class="ft-bottom">
@@ -736,63 +582,7 @@
 </footer>
 
 <script>
-  /* ---------- Données clientes (démo) ---------- */
-  const clients = [
-    {i:"JD",n:"Jean Dupont",since:"Client depuis mars 2024",visits:14,spent:"890 €",note:"Préfère les rendez-vous en fin de journée. Suivi régulier depuis le début."},
-    {i:"LM",n:"Léa Martin",since:"Cliente depuis sept. 2024",visits:6,spent:"310 €",note:"Vient toutes les 3 semaines. Privilégie les créneaux du matin."},
-    {i:"SB",n:"Sarah Benali",since:"Cliente depuis nov. 2024",visits:4,spent:"245 €",note:"Réserve souvent le samedi. Toujours ponctuelle."},
-    {i:"MR",n:"Marine Roux",since:"Cliente depuis janv. 2025",visits:3,spent:"175 €",note:"Nouvelle cliente, arrivée en janvier. Lui envoyer un rappel la veille."}
-  ];
-  function renderClient(idx){
-    const c = clients[idx];
-    document.getElementById('dDetail').innerHTML = `
-      <div class="big">${c.i}</div>
-      <h4>${c.n}</h4>
-      <div class="sub">${c.since}</div>
-      <div class="d-stats">
-        <div class="d-stat"><div class="n">${c.visits}</div><div class="l">Rendez-vous</div></div>
-        <div class="d-stat"><div class="n">${c.spent}</div><div class="l">Total dépensé</div></div>
-      </div>
-      <div class="d-note"><span>Note personnelle</span>${c.note}</div>`;
-  }
-  renderClient(0);
-  document.getElementById('dList').addEventListener('click', e=>{
-    const li = e.target.closest('.d-li'); if(!li) return;
-    document.querySelectorAll('.d-li').forEach(x=>x.classList.remove('sel'));
-    li.classList.add('sel');
-    renderClient(+li.dataset.c);
-  });
-
-  /* ---------- Démo : onglets ---------- */
-  document.querySelectorAll('.demo-tab').forEach(t=>{
-    t.addEventListener('click', ()=>{
-      document.querySelectorAll('.demo-tab').forEach(x=>x.classList.remove('active'));
-      t.classList.add('active');
-      const k = t.dataset.tab;
-      document.querySelectorAll('.demo-panel').forEach(p=>p.classList.toggle('active', p.dataset.panel===k));
-    });
-  });
-
-  /* ---------- Démo : chat ---------- */
-  const chatInput = document.getElementById('dChatInput');
-  const chatSend = document.getElementById('dChatSend');
-  const msgs = document.getElementById('dMsgs');
-  function sendChat(){
-    const v = chatInput.value.trim(); if(!v) return;
-    const me = document.createElement('div'); me.className='bub me'; me.textContent=v; msgs.appendChild(me);
-    chatInput.value=''; msgs.scrollTop = msgs.scrollHeight;
-    setTimeout(()=>{
-      const t = document.createElement('div'); t.className='bub them'; t.textContent="Super, merci ! À très vite 😊"; msgs.appendChild(t);
-      msgs.scrollTop = msgs.scrollHeight;
-    }, 700);
-  }
-  chatSend.addEventListener('click', sendChat);
-  chatInput.addEventListener('keydown', e=>{ if(e.key==='Enter') sendChat(); });
-
-  /* ---------- Démo : créneaux libres ---------- */
-  document.querySelectorAll('[data-book]').forEach(b=>{
-    b.addEventListener('click', ()=>{ b.style.background='var(--rose)'; b.style.borderStyle='solid'; b.style.color='var(--terra-deep)'; b.innerHTML='✓ Réservé'; });
-  });
+  /* ---------- Hero : créneau libre ---------- */
   const freeSlot = document.getElementById('freeSlot');
   if(freeSlot){ freeSlot.addEventListener('click', ()=>{ freeSlot.classList.remove('free'); freeSlot.classList.add('terra'); freeSlot.innerHTML='<div class="svc">Nouveau rendez-vous</div><div class="who">Cliquez pour confirmer</div>'; }); }
 
@@ -802,7 +592,7 @@
     tgMonth.classList.toggle('on', !year); tgYear.classList.toggle('on', year);
     document.querySelectorAll('.amt').forEach(a=>{ a.textContent = (year? a.dataset.y : a.dataset.m) + ' €'; });
     document.querySelectorAll('[data-bill]').forEach((el,i)=>{
-      const amount = year ? [180,324][i] : null;
+      const amount = year ? ['191,88','335,88'][i] : null;
       el.textContent = year ? `Soit ${amount} € / an, facturé annuellement` : 'Facturé mensuellement';
     });
   }
