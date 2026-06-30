@@ -3,11 +3,122 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Zoma — L'app de gestion des solopreneurs & auto-entrepreneurs</title>
-<meta name="description" content="Agenda, réservation en ligne, messagerie client et fichier clients réunis dans une seule app simple et abordable. Conçue pour les solopreneurs et auto-entrepreneurs, quel que soit leur métier." />
+<title>Zoma — Logiciel de réservation en ligne & gestion pour indépendants</title>
+<meta name="description" content="Zoma réunit agenda, prise de rendez-vous en ligne, messagerie client et fichier clients dans une seule app simple et abordable pour indépendants et auto-entrepreneurs. Essai 30 jours sans carte bancaire." />
+<link rel="canonical" href="https://zoma-app.fr/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#6b52c8" />
+<meta name="author" content="Zoma" />
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="/zoma-favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Zoma" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:url" content="https://zoma-app.fr/" />
+<meta property="og:title" content="Zoma — Logiciel de réservation en ligne & gestion pour indépendants" />
+<meta property="og:description" content="Agenda, prise de rendez-vous en ligne, messagerie et fichier clients dans une seule app simple et abordable. Essai 30 jours sans carte bancaire." />
+<meta property="og:image" content="https://zoma-app.fr/favicon-180.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Zoma — Logiciel de réservation en ligne & gestion pour indépendants" />
+<meta name="twitter:description" content="Agenda, RDV en ligne, messagerie et fichier clients dans une seule app pour indépendants. Essai 30 jours sans carte." />
+<meta name="twitter:image" content="https://zoma-app.fr/favicon-180.png" />
+
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap" rel="stylesheet">
+
+<!-- ============ Données structurées (schema.org) ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zoma",
+  "url": "https://zoma-app.fr/",
+  "logo": "https://zoma-app.fr/favicon-180.png",
+  "description": "Logiciel tout-en-un de réservation et de gestion pour indépendants et auto-entrepreneurs : agenda, prise de rendez-vous en ligne, messagerie client et fichier clients.",
+  "email": "contact@zoma-app.fr",
+  "areaServed": "FR",
+  "sameAs": [
+    "https://www.instagram.com/zoma.app",
+    "https://www.tiktok.com/@zoma.app"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Zoma",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "url": "https://zoma-app.fr/",
+  "description": "App de réservation en ligne et de gestion pour indépendants : agenda intelligent, page de réservation 24h/24, messagerie client, fichier clients, rappels de rendez-vous et acomptes.",
+  "inLanguage": "fr",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Essentiel",
+      "price": "19.99",
+      "priceCurrency": "EUR",
+      "description": "Page de réservation en ligne, agenda, rappels e-mail, fichier clients et messagerie client intégrée."
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "34.99",
+      "priceCurrency": "EUR",
+      "description": "Tout Essentiel, plus acompte à la réservation, rappels SMS, relance des clients inactifs et statistiques."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ai-je besoin d'une carte bancaire pour l'essai ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Vous créez votre compte et profitez de 30 jours complets sans rien saisir. Vous ne choisissez une formule que si Zoma vous convient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je changer de formule plus tard ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, à tout moment depuis votre espace. Le changement prend effet immédiatement et la facturation est ajustée au prorata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que devient l'offre membre fondateur ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les 100 premiers inscrits conservent −30 % sur leur abonnement, aussi longtemps qu'ils restent clients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes données sont-elles en sécurité ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vos données et celles de vos clients sont hébergées en Europe et vous appartiennent. Vous pouvez les exporter ou supprimer votre compte quand vous le souhaitez."
+      }
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --cream:#f8f7fc;
@@ -283,7 +394,9 @@
     <div class="brand" data-go="accueil"><img class="logo" src="/zoma-favicon.svg" alt="Logo Zoma" /><span class="a">Zo</span><span class="b">ma</span></div>
     <nav class="nav-links">
       <a class="link" data-anchor="atouts">Fonctionnalités</a>
+      <a class="link" href="/metiers/">Métiers</a>
       <a class="link" data-anchor="tarifs">Tarifs</a>
+      <a class="link" href="/comparatif/">Comparatif</a>
       <a class="link" data-go="contact">Contact</a>
     </nav>
     <div class="nav-cta">
@@ -296,7 +409,9 @@
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a data-anchor="atouts">Fonctionnalités</a>
+    <a href="/metiers/">Métiers</a>
     <a data-anchor="tarifs">Tarifs</a>
+    <a href="/comparatif/">Comparatif</a>
     <a data-go="contact">Contact</a>
     <a class="btn btn-terra" href="https://app.zoma-app.fr/">Démarrer l'essai gratuit</a>
   </div>
@@ -461,18 +576,19 @@
         <p>Vous travaillez à votre compte, seul(e), et vous prenez des rendez-vous ? Zoma est fait pour vous, quel que soit votre métier.</p>
       </div>
       <div class="chips reveal">
-        <span class="chip"><span class="d"></span>Coach sportif</span>
-        <span class="chip"><span class="d"></span>Consultant(e) / Freelance</span>
-        <span class="chip"><span class="d"></span>Formateur / Formatrice</span>
-        <span class="chip"><span class="d"></span>Thérapeute</span>
-        <span class="chip"><span class="d"></span>Praticien(ne) bien-être</span>
-        <span class="chip"><span class="d"></span>Naturopathe / Sophrologue</span>
-        <span class="chip"><span class="d"></span>Photographe</span>
+        <a class="chip" href="/metiers/prothesiste-ongulaire/"><span class="d"></span>Prothésiste ongulaire</a>
+        <a class="chip" href="/metiers/estheticienne/"><span class="d"></span>Esthéticien·ne</a>
+        <a class="chip" href="/metiers/coiffeur/"><span class="d"></span>Coiffeur·se</a>
+        <a class="chip" href="/metiers/tatoueur/"><span class="d"></span>Tatoueur·se</a>
+        <a class="chip" href="/metiers/coach-sportif/"><span class="d"></span>Coach sportif</a>
+        <a class="chip" href="/metiers/consultant/"><span class="d"></span>Consultant·e / Freelance</a>
+        <a class="chip" href="/metiers/naturopathe/"><span class="d"></span>Naturopathe</a>
+        <a class="chip" href="/metiers/sophrologue/"><span class="d"></span>Sophrologue</a>
+        <a class="chip" href="/metiers/therapeute/"><span class="d"></span>Thérapeute &amp; bien-être</a>
+        <a class="chip" href="/metiers/photographe/"><span class="d"></span>Photographe</a>
+        <span class="chip"><span class="d"></span>Formateur·ice</span>
         <span class="chip"><span class="d"></span>Professeur particulier</span>
-        <span class="chip"><span class="d"></span>Professeur de yoga</span>
-        <span class="chip"><span class="d"></span>Esthéticien(ne)</span>
-        <span class="chip"><span class="d"></span>Coiffeur / Coiffeuse</span>
-        <span class="chip"><span class="d"></span>… et bien d'autres</span>
+        <a class="chip" href="/metiers/"><span class="d"></span>… et tous les métiers</a>
       </div>
     </div>
   </section>
@@ -566,7 +682,9 @@
       <div>
         <h5>Produit</h5>
         <a class="fl" data-anchor="atouts">Fonctionnalités</a>
+        <a class="fl" href="/metiers/">Métiers</a>
         <a class="fl" data-anchor="tarifs">Tarifs</a>
+        <a class="fl" href="/comparatif/">Comparatif</a>
       </div>
       <div>
         <h5>Entreprise</h5>
@@ -576,7 +694,7 @@
       </div>
     </div>
     <div class="ft-bottom">
-      <span>© 2025 Zoma. Tous droits réservés.</span>
+      <span>© <span id="year">2026</span> Zoma. Tous droits réservés.</span>
       <span>Fait avec soin en France · Données hébergées en Europe</span>
     </div>
   </div>
@@ -674,6 +792,9 @@
     document.querySelectorAll('.page.active .reveal:not(.in)').forEach(el=>io.observe(el));
   }
   observeReveals();
+
+  /* ---------- Année du footer ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
