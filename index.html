@@ -229,25 +229,7 @@
   .device-bar{display:flex;align-items:center;gap:.45rem;padding:14px 18px;border-bottom:1px solid var(--line)}
   .dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
   .device-bar .title{margin-left:auto;font-family:var(--font-display);font-weight:700;font-size:.95rem;color:var(--ink)}
-  .agenda{padding:18px 18px 22px}
-  .agenda-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-  .agenda-head .day{font-family:var(--font-display);font-weight:700;font-size:1.15rem}
-  .agenda-head .nav-arrows{display:flex;gap:6px}
-  .arrow{width:30px;height:30px;border-radius:9px;border:1px solid var(--line);background:var(--cream);display:grid;place-items:center;color:var(--taupe)}
-  .slot{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:stretch;margin-bottom:9px}
-  .slot .time{font-size:.82rem;color:var(--taupe);padding-top:10px;font-variant-numeric:tabular-nums}
-  .appt{border-radius:13px;padding:11px 13px;border:1px solid transparent;transition:transform .2s ease}
-  .appt:hover{transform:translateX(3px)}
-  .appt .svc{font-weight:600;font-size:.92rem}
-  .appt .who{font-size:.82rem;opacity:.8}
-  .appt.terra{background:var(--rose);border-color:#d9d0f0}
-  .appt.terra .svc{color:var(--terra-deep)}
-  .appt.ink{background:#efecf7;border-color:var(--line)}
-  .appt.free{background:repeating-linear-gradient(135deg,#f4f1fc,#f4f1fc 8px,#e9e4f7 8px,#e9e4f7 16px);border:1px dashed #d6cdef;color:var(--taupe);display:flex;align-items:center;justify-content:space-between;cursor:pointer}
-  .appt.free .svc{color:var(--taupe);font-weight:500}
-  .appt.free:hover{border-color:var(--terra);color:var(--terra-deep)}
-  .appt.free .plus{font-size:1.1rem;line-height:1}
-  .waitlist-pill{margin-top:10px;display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--terra-deep);background:var(--rose-2);border:1px solid #ded6f2;border-radius:999px;padding:.45rem .8rem;width:fit-content}
+  .device-shot{display:block;width:100%;height:auto}
 
   /* ---------- Sections ---------- */
   section.block{padding:74px 0}
@@ -439,23 +421,7 @@
 
       <div class="reveal device" style="transition-delay:.12s">
         <div class="device-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="title">Mon agenda</span></div>
-        <div class="agenda">
-          <div class="agenda-head">
-            <span class="day">Mardi 16 juin</span>
-            <span class="nav-arrows">
-              <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg></span>
-              <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg></span>
-            </span>
-          </div>
-          <div class="slot"><span class="time">09:00</span><div class="appt terra"><div class="svc">Séance découverte</div><div class="who">Camille D. · 1h00</div></div></div>
-          <div class="slot"><span class="time">11:00</span><div class="appt ink"><div class="svc">Suivi mensuel</div><div class="who">Thomas M. · 45 min</div></div></div>
-          <div class="slot"><span class="time">14:00</span><div class="appt free" id="freeSlot"><span class="svc">Créneau libre</span><span class="plus">+</span></div></div>
-          <div class="slot"><span class="time">15:30</span><div class="appt terra"><div class="svc">Rendez-vous client</div><div class="who">Sarah B. · 1h00</div></div></div>
-          <div class="waitlist-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
-            2 clients en liste d'attente pour aujourd'hui
-          </div>
-        </div>
+        <img class="device-shot" src="/assets/app-agenda.png" alt="Agenda Zoma : vue de la semaine avec les rendez-vous confirmés d'un professionnel indépendant" width="1277" height="841" fetchpriority="high" />
       </div>
     </div>
   </section>
