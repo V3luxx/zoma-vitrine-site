@@ -341,12 +341,13 @@
 
   /* ---------- Footer ---------- */
   footer.ft{border-top:1px solid var(--line);background:var(--rose-2);padding:48px 0 30px;margin-top:10px}
-  .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+  .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
   .ft .brand{font-size:1.5rem;margin-bottom:.6rem}
   .ft p.tag{color:var(--taupe);font-size:.92rem;max-width:22rem}
   .ft h5{font-family:var(--font-body);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);margin:0 0 14px}
   .ft a.fl{display:block;color:var(--taupe);font-size:.94rem;padding:.28rem 0;cursor:pointer;transition:color .2s}
   .ft a.fl:hover{color:var(--terra-deep)}
+  .form-legal{font-size:.78rem;color:var(--taupe);line-height:1.5;margin-top:12px}.form-legal a{color:inherit;text-decoration:underline}
   .ft-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:36px;padding-top:22px;border-top:1px solid var(--line);color:var(--taupe);font-size:.85rem;flex-wrap:wrap;gap:10px}
 
   /* ---------- Reveal animation ---------- */
@@ -642,6 +643,7 @@
             <textarea id="cmsg" placeholder="Dites-nous comment on peut vous aider…"></textarea>
           </div>
           <button class="btn btn-terra btn-lg" id="sendBtn">Envoyer le message</button>
+          <p class="form-legal">Les informations saisies servent uniquement à traiter votre demande et à vous répondre. Elles ne sont ni cédées ni utilisées à d'autres fins. Voir la <a href="https://app.zoma-app.fr/legal/confidentialite">politique de confidentialité</a>.</p>
         </div>
         <div class="form-ok" id="formOk">
           <div class="ok-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -673,6 +675,13 @@
         <a class="fl" data-go="contact">Contact</a>
         <a class="fl" data-go="contact">Démo personnalisée</a>
         <a class="fl" data-anchor="tarifs">Devenir membre fondateur</a>
+      </div>
+      <div>
+        <h5>Légal</h5>
+        <a class="fl" href="https://app.zoma-app.fr/legal/mentions-legales">Mentions légales</a>
+        <a class="fl" href="https://app.zoma-app.fr/legal/cgu">CGU / CGV</a>
+        <a class="fl" href="https://app.zoma-app.fr/legal/confidentialite">Politique de confidentialité</a>
+        <a class="fl" href="https://app.zoma-app.fr/legal/dpa">Accord de traitement (DPA)</a>
       </div>
     </div>
     <div class="ft-bottom">

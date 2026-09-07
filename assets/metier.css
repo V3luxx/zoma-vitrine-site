@@ -83,6 +83,7 @@ a.chip:hover{border-color:var(--terra);color:var(--terra-deep);transform:transla
 
 footer.ft{border-top:1px solid var(--line);margin-top:40px;padding:30px 0;color:var(--taupe);font-size:.9rem}
 .ft-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ft-legal{flex-basis:100%;font-size:.85rem}.ft-legal a{color:inherit}
 footer a:hover{color:var(--terra-deep)}
 
 @media(max-width:820px){ .pains,.pillars{grid-template-columns:1fr} .feat-row{grid-template-columns:1fr} }
