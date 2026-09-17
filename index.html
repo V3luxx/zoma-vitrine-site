@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Zoma — Logiciel de réservation en ligne & gestion pour indépendants</title>
+<title>Zoma : logiciel de réservation en ligne et gestion pour indépendants</title>
 <meta name="description" content="Zoma réunit agenda, prise de rendez-vous en ligne, messagerie client et fichier clients dans une seule app simple et abordable pour indépendants et auto-entrepreneurs. Essai 30 jours sans carte bancaire." />
 <link rel="canonical" href="https://zoma-app.fr/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Zoma" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:url" content="https://zoma-app.fr/" />
-<meta property="og:title" content="Zoma — Logiciel de réservation en ligne & gestion pour indépendants" />
+<meta property="og:title" content="Zoma : logiciel de réservation en ligne et gestion pour indépendants" />
 <meta property="og:description" content="Agenda, prise de rendez-vous en ligne, messagerie et fichier clients dans une seule app simple et abordable. Essai 30 jours sans carte bancaire." />
 <meta property="og:image" content="https://zoma-app.fr/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -28,7 +28,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Zoma — Logiciel de réservation en ligne & gestion pour indépendants" />
+<meta name="twitter:title" content="Zoma : logiciel de réservation en ligne et gestion pour indépendants" />
 <meta name="twitter:description" content="Agenda, RDV en ligne, messagerie et fichier clients dans une seule app pour indépendants. Essai 30 jours sans carte." />
 <meta name="twitter:image" content="https://zoma-app.fr/og-image.png" />
 
@@ -61,7 +61,7 @@
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, iOS, Android",
   "url": "https://zoma-app.fr/",
-  "description": "App de réservation en ligne et de gestion pour indépendants : agenda intelligent, page de réservation 24h/24, messagerie client, fichier clients, rappels de rendez-vous et acomptes.",
+  "description": "App de réservation en ligne et de gestion pour indépendants : agenda, page de réservation 24h/24, messagerie client, fichier clients, rappels de rendez-vous, rendez-vous en visioconférence, acomptes et facturation.",
   "inLanguage": "fr",
   "offers": [
     {
@@ -76,7 +76,7 @@
       "name": "Pro",
       "price": "39.90",
       "priceCurrency": "EUR",
-      "description": "Tout Essentiel, plus acompte à la réservation, rappels SMS, relance des clients inactifs et statistiques."
+      "description": "Tout Essentiel, plus acompte à la réservation, rendez-vous en visioconférence, rappels SMS, boutique, relance des clients inactifs et statistiques."
     }
   ]
 }
@@ -256,6 +256,10 @@
   .card h3{font-size:1.3rem;margin-bottom:.5rem}
   .card p{color:var(--taupe);font-size:.97rem}
   .card .more{display:inline-flex;align-items:center;gap:.35rem;margin-top:14px;font-weight:600;font-size:.9rem;color:var(--terra-deep)}
+  .card.hl{background:linear-gradient(180deg,#fff 0%,var(--rose-2) 100%);border-color:var(--terra)}
+  .card.hl:hover{border-color:var(--terra)}
+  .card.hl .icon-badge{background:var(--terra);color:#fff}
+  .tag-pro{display:inline-block;margin-left:.45rem;background:var(--terra);color:#fff;font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .48rem;border-radius:999px;vertical-align:middle;position:relative;top:-2px}
 
   /* Secondary features row */
   .feat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 34px;margin-top:34px}
@@ -301,11 +305,15 @@
   .price .per{color:var(--taupe);font-size:.95rem}
   .billed{font-size:.82rem;color:var(--taupe);margin-top:.4rem;min-height:20px}
   .plan .btn{width:100%;justify-content:center;margin:22px 0}
-  .plist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+  .plist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;text-align:left}
   .plist li{display:flex;gap:.6rem;align-items:flex-start;font-size:.93rem}
   .plist li svg{flex:none;color:var(--terra-deep);margin-top:3px}
   .plist li.muted{color:#a59ebb}
   .plist li.muted svg{color:#cfc9e0}
+  .plist li small{display:block;color:var(--taupe);font-size:.86rem;line-height:1.5;margin-top:.14rem;font-weight:400}
+  .plus-head{display:flex;align-items:center;gap:.55rem;text-align:left;background:var(--rose);color:var(--terra-deep);border-radius:14px;padding:.72rem .85rem;margin-bottom:17px;font-size:.92rem;font-weight:600;line-height:1.35}
+  .plus-head svg{flex:none}
+  .plan-note{margin-top:22px;padding-top:17px;border-top:1px solid var(--line);color:var(--taupe);font-size:.85rem;line-height:1.55;text-align:left}
   .price-foot{text-align:center;color:var(--taupe);font-size:.9rem;margin-top:26px;display:flex;align-items:center;justify-content:center;gap:.5rem;flex-wrap:wrap}
 
   .faq{max-width:760px;margin:60px auto 0}
@@ -416,7 +424,7 @@
       <div class="reveal">
         <span class="eyebrow">L'app tout-en-un des solopreneurs</span>
         <h1>Faites votre métier. <em>Zoma fait le reste.</em></h1>
-        <p class="lead">Agenda, réservations en ligne, messagerie et fichier clients : tout ce qui fait tourner votre activité réuni dans une seule app, simple et abordable. Vous gagnez du temps, vos clients réservent en autonomie, et vous gardez l'esprit libre pour ce que vous faites de mieux.</p>
+        <p class="lead">Agenda, réservations en ligne, messagerie, fichier clients, visio, facturation : c'est la même app. Vos clients réservent seuls pendant que vous travaillez, et vous arrêtez de courir après les confirmations.</p>
         <div class="hero-actions">
           <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr">Démarrer 30 jours gratuits</a>
           <button class="btn btn-ghost btn-lg" data-anchor="tarifs">Voir les tarifs</button>
@@ -443,38 +451,52 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Tout au même endroit</span>
-        <h2>Trois outils essentiels, une seule application</h2>
-        <p>Fini de jongler entre vos messages, votre carnet de rendez-vous et un tableur. Zoma centralise tout ce qui fait tourner votre activité au quotidien.</p>
+        <h2>L'agenda, la visio et vos clients dans la même app</h2>
+        <p>Ailleurs, il vous faut un agenda, un outil de visio, un carnet d'adresses et un tableur pour la facturation. Ici, tout tient dans la même app.</p>
       </div>
 
       <div class="pillars">
         <div class="card reveal">
           <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div>
-          <h3>Agenda intelligent</h3>
-          <p>Gérez vos rendez-vous par plages horaires personnalisées. Une page de réservation en ligne permet à vos clients de réserver eux-mêmes, 24h/24, selon vos disponibilités réelles.</p>
-          <span class="more" data-anchor="tarifs">Voir les tarifs →</span>
+          <h3>Agenda et réservation en ligne</h3>
+          <p>Vos plages, vos pauses, vos jours de fermeture. Vos clients réservent eux-mêmes ce qui reste libre, un dimanche soir comme à 2 h du matin.</p>
         </div>
-        <div class="card reveal" style="transition-delay:.08s">
+        <div class="card hl reveal" style="transition-delay:.06s">
+          <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M23 7.5v9l-6-4.5z"/><rect x="1" y="5" width="16" height="14" rx="3"/></svg></div>
+          <h3>Rendez-vous en visio <span class="tag-pro">Plan Pro</span></h3>
+          <p>Le lien de visio est créé avec le rendez-vous et part dans la confirmation. Votre client clique, vous démarrez. Pas de compte Zoom, pas de logiciel à installer, ni chez vous ni chez lui.</p>
+          <span class="more" data-anchor="tarifs">Voir le plan Pro →</span>
+        </div>
+        <div class="card reveal" style="transition-delay:.12s">
           <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
           <h3>Messagerie client</h3>
-          <p>Échangez avec vos clients directement dans Zoma, sans éparpiller vos conversations entre SMS, e-mails et réseaux sociaux. Chaque échange est rattaché automatiquement à la bonne fiche client.</p>
-          <span class="more" data-anchor="tarifs">Voir les tarifs →</span>
+          <p>Vos échanges ne se perdent plus entre les SMS, les mails et les messages Instagram. Chaque conversation se range toute seule dans la bonne fiche client.</p>
         </div>
-        <div class="card reveal" style="transition-delay:.16s">
+        <div class="card reveal" style="transition-delay:.18s">
           <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
           <h3>Fichier clients</h3>
-          <p>Tous vos clients, leur historique de prestations, leurs préférences et vos notes personnelles au même endroit. Vous reconnaissez chaque client au premier coup d'œil.</p>
-          <span class="more" data-anchor="tarifs">Voir les tarifs →</span>
+          <p>Ce qu'il a déjà réservé, ses préférences, vos notes : vous avez tout sous les yeux avant même qu'il arrive.</p>
+        </div>
+        <div class="card hl reveal" style="transition-delay:.24s">
+          <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="4.5" width="21" height="15" rx="3"/><line x1="1.5" y1="10" x2="22.5" y2="10"/><line x1="5.5" y1="15" x2="10" y2="15"/></svg></div>
+          <h3>Acompte à la réservation <span class="tag-pro">Plan Pro</span></h3>
+          <p>Le créneau n'est bloqué qu'une fois l'acompte réglé. Il est versé sur votre compte, pas sur le nôtre : Zoma ne prend aucune commission.</p>
+          <span class="more" data-anchor="tarifs">Voir le plan Pro →</span>
+        </div>
+        <div class="card reveal" style="transition-delay:.30s">
+          <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 2.5H6.5a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z"/><polyline points="14 2.5 14 8 19.5 8"/><line x1="15" y1="13" x2="9" y2="13"/><line x1="15" y1="17" x2="9" y2="17"/></svg></div>
+          <h3>Facturation et livre des recettes</h3>
+          <p>Vos factures sortent de l'app et vos encaissements se reportent tout seuls dans le livre des recettes. Plus de tableur à tenir le dimanche.</p>
         </div>
       </div>
 
       <div class="feat-row reveal">
-        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Liste d'attente automatique</b><small>Une annulation libère un créneau ? Le premier de la liste est prévenu automatiquement.</small></div></div>
-        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Page de réservation publique</b><small>Un lien à partager partout — réseaux, site ou signature mail : vos clients réservent selon vos disponibilités réelles.</small></div></div>
-        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Rappels de rendez-vous</b><small>Moins de rendez-vous oubliés, moins de trous dans votre journée.</small></div></div>
-        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Horaires sur-mesure</b><small>Définissez plusieurs plages par jour, vos pauses et vos jours de fermeture.</small></div></div>
-        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Historique des prestations</b><small>Retrouvez en un instant ce que chaque client a réservé et quand.</small></div></div>
-        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Sur mobile et ordinateur</b><small>Votre activité vous suit partout, au bureau comme en déplacement.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Liste d'attente automatique</b><small>Une annulation libère un créneau ? La personne suivante est prévenue sans que vous ayez à y penser.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Rappels de rendez-vous</b><small>Par e-mail dans l'Essentiel, par SMS dans le Pro. Moins d'oublis, moins de trous dans la journée.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Import depuis Planity ou Booksy</b><small>Vos clients et vos rendez-vous arrivent avec vous. Vous ne repartez pas d'une page blanche.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Votre agenda dans Google, Apple ou Outlook</b><small>Vos rendez-vous Zoma s'affichent aussi dans l'agenda que vous ouvrez déjà.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Rendez-vous récurrents</b><small>Le cours du mardi 18 h se reprogramme tout seul, semaine après semaine.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Sur mobile et sur ordinateur</b><small>Le téléphone entre deux rendez-vous, l'ordinateur le soir pour la facturation.</small></div></div>
       </div>
     </div>
   </section>
@@ -484,7 +506,7 @@
     <div class="wrap">
       <div class="founder reveal">Offre membre fondateur <b>&nbsp;30 % de remise pendant 24 mois</b>&nbsp; pour les 100 premiers inscrits</div>
       <h2 class="reveal">Un tarif simple, sans surprise</h2>
-      <p class="reveal"><b>Essentiel</b> organise votre activité. <b>Pro</b> l'encaisse et la développe. Deux formules, 30 jours d'essai gratuit, sans carte bancaire. Changez ou annulez à tout moment.</p>
+      <p class="reveal"><b>Essentiel</b> suffit pour prendre vos rendez-vous et tenir votre fichier clients. <b>Pro</b> ajoute l'acompte, la visio et les SMS. Dans les deux cas : 30 jours d'essai, sans carte bancaire, résiliable quand vous voulez.</p>
 
       <div class="toggle reveal" role="tablist" aria-label="Période de facturation">
         <button class="on" id="tgMonth">Mensuel</button>
@@ -494,7 +516,7 @@
       <div class="plans">
         <div class="plan reveal">
           <div class="pname">Essentiel</div>
-          <div class="pdesc">L'essentiel pour ne plus jongler entre téléphone, mail et agenda.</div>
+          <div class="pdesc">Pour prendre vos rendez-vous, suivre vos clients et éditer vos factures.</div>
           <div class="price"><span class="amt" data-m="22,90" data-y="19,08">22,90 €</span><span class="per">TTC / mois</span></div>
           <div class="billed" data-bill="">Prix TTC, facturé mensuellement</div>
           <a class="btn btn-ghost" href="https://app.zoma-app.fr">Démarrer l'essai gratuit</a>
@@ -524,20 +546,21 @@
         <div class="plan featured reveal" style="transition-delay:.08s">
           <span class="badge-pop">Le plus choisi</span>
           <div class="pname">Pro</div>
-          <div class="pdesc">Encaissez dès la réservation et pilotez votre activité.</div>
+          <div class="pdesc">Pour encaisser d'avance, recevoir en visio et suivre vos chiffres.</div>
           <div class="price"><span class="amt" data-m="39,90" data-y="33,25">39,90 €</span><span class="per">TTC / mois</span></div>
           <div class="billed" data-bill="">Prix TTC, facturé mensuellement</div>
           <a class="btn btn-terra" href="https://app.zoma-app.fr">Démarrer l'essai gratuit</a>
+          <div class="plus-head"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Tout ce que contient l'Essentiel, et en plus&nbsp;:</div>
           <ul class="plist">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> <b style="font-weight:600">Tout l'Essentiel, et en plus&nbsp;:</b></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Acompte à la réservation, encaissé sur votre compte</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels par SMS (150 inclus par mois)</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Boutique — vendez vos produits, réglés sur place</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Relance automatique des clients inactifs</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Statistiques &amp; pilotage de votre activité</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rendez-vous en visioconférence</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Support prioritaire</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Acompte à la réservation</b><small>Le créneau n'est bloqué qu'une fois l'acompte réglé. Il est versé sur votre compte, sans commission Zoma.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Rendez-vous en visioconférence</b><small>Le lien est généré avec le rendez-vous. Ni compte Zoom, ni logiciel à installer, ni pour vous ni pour votre client.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Rappels par SMS, 150 inclus par mois</b><small>Un SMS se lit, contrairement à un e-mail noyé dans une boîte de réception.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Boutique</b><small>Vendez vos produits depuis votre page de réservation, réglés sur place.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Relance des clients inactifs</b><small>Zoma repère celles et ceux que vous n'avez pas vus depuis longtemps et leur écrit à votre place.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Statistiques et pilotage</b><small>Chiffre d'affaires, prestations qui marchent, taux d'absence : vous savez où vous en êtes.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Support prioritaire</b><small>Vos demandes passent en haut de la pile.</small></div></li>
           </ul>
+          <p class="plan-note">Vous pouvez commencer en Essentiel et passer en Pro le jour où vous en avez besoin : le changement est immédiat et la facturation ajustée au prorata.</p>
         </div>
       </div>
 
@@ -586,7 +609,7 @@
   <section class="cta-band">
     <div class="wrap">
       <div class="cta-inner reveal">
-        <h2>Reprenez le contrôle de votre activité</h2>
+        <h2>Voyez ce que ça donne sur votre agenda</h2>
         <p>30 jours pour tout essayer, sans carte bancaire. Vous gardez vos données, vous arrêtez quand vous voulez.</p>
         <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr">Commencer gratuitement</a>
       </div>
@@ -601,7 +624,7 @@
       <div class="contact-intro reveal">
         <span class="eyebrow">Parlons-en</span>
         <h1>Une question ? On vous répond.</h1>
-        <p>Que vous hésitiez encore ou que vous vouliez une démo personnalisée, écrivez-nous. Une vraie personne vous répond — généralement sous 24 h.</p>
+        <p>Que vous hésitiez encore ou que vous vouliez une démo personnalisée, écrivez-nous. Une vraie personne vous répond, généralement sous 24 h.</p>
         <div class="contact-info">
           <div class="ci-row">
             <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-10 6L2 7"/></svg></div>
