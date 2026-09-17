@@ -107,7 +107,7 @@
       "name": "Que devient l'offre membre fondateur ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Les 100 premiers inscrits bénéficient de 30 % de remise pendant 24 mois. Vous êtes prévenu par e-mail 30 jours avant le retour au tarif normal. La remise est perdue en cas de résiliation."
+        "text": "Les 100 premiers inscrits bénéficient de 30 % de remise pendant 12 mois. Vous êtes prévenu par e-mail 30 jours avant le retour au tarif normal. La remise est perdue en cas de résiliation."
       }
     },
     {
@@ -268,6 +268,17 @@
   .feat b{font-weight:600;font-size:.97rem}
   .feat small{display:block;color:var(--taupe);font-size:.87rem;line-height:1.45}
 
+  /* ---------- Boutique ---------- */
+  .shop-band{background:var(--rose-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .shop-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:68px 24px}
+  .shop-grid h2{font-size:clamp(1.7rem,3vw,2.25rem);margin:.9rem 0 .85rem}
+  .shop-grid p{color:var(--taupe);font-size:1.02rem;margin-bottom:.7rem}
+  .shop-grid .btn{margin-top:16px}
+  .shop-ex{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px;box-shadow:var(--shadow-sm)}
+  .shop-ex h3{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);font-weight:700}
+  .shop-ex .chips{margin-top:18px}
+  .shop-ex .chip{background:var(--cream);font-size:.9rem;padding:.5rem 1rem}
+
   /* ---------- Pour qui ---------- */
   .who-band{background:var(--rose-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -369,6 +380,7 @@
     .hero-grid{grid-template-columns:1fr;gap:40px}
     .pillars{grid-template-columns:1fr}
     .feat-row{grid-template-columns:1fr}
+    .shop-grid{grid-template-columns:1fr;gap:34px;padding:54px 24px}
     .plans{grid-template-columns:1fr;max-width:420px}
     .contact-grid{grid-template-columns:1fr;gap:34px}
     .ft-grid{grid-template-columns:1fr;gap:26px}
@@ -501,10 +513,34 @@
     </div>
   </section>
 
+
+  <!-- Boutique -->
+  <section class="shop-band">
+    <div class="wrap shop-grid">
+      <div class="reveal">
+        <span class="eyebrow">Boutique <span class="tag-pro">Plan Pro</span></span>
+        <h2>Vos produits en vitrine, au moment où le client réserve</h2>
+        <p>La boutique affiche vos produits et vos forfaits juste à côté de vos prestations, là où vos clients prennent déjà rendez-vous. Le règlement se fait sur place ou par virement, et l'achat reste rattaché au rendez-vous.</p>
+        <p>De quoi vendre une cure ou un produit sans avoir à y penser à chaque fois.</p>
+        <button class="btn btn-terra" data-anchor="tarifs">Voir le plan Pro</button>
+      </div>
+      <div class="shop-ex reveal" style="transition-delay:.1s">
+        <h3>Ce que vous pouvez y mettre</h3>
+        <div class="chips">
+          <span class="chip"><span class="d"></span>Forfait 10 séances</span>
+          <span class="chip"><span class="d"></span>Cure de 3 soins</span>
+          <span class="chip"><span class="d"></span>Pack de cours</span>
+          <span class="chip"><span class="d"></span>Carte cadeau</span>
+          <span class="chip"><span class="d"></span>Produits à emporter</span>
+          <span class="chip"><span class="d"></span>Supplément à la prestation</span>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Tarifs -->
   <section class="price-hero" id="tarifs">
     <div class="wrap">
-      <div class="founder reveal">Offre membre fondateur <b>&nbsp;30 % de remise pendant 24 mois</b>&nbsp; pour les 100 premiers inscrits</div>
+      <div class="founder reveal">Offre membre fondateur <b>&nbsp;30 % de remise pendant 12 mois</b>&nbsp; pour les 100 premiers inscrits</div>
       <h2 class="reveal">Un tarif simple, sans surprise</h2>
       <p class="reveal"><b>Essentiel</b> suffit pour prendre vos rendez-vous et tenir votre fichier clients. <b>Pro</b> ajoute l'acompte, la visio et les SMS. Dans les deux cas : 30 jours d'essai, sans carte bancaire, résiliable quand vous voulez.</p>
 
@@ -555,7 +591,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Acompte à la réservation</b><small>Le créneau n'est bloqué qu'une fois l'acompte réglé. Il est versé sur votre compte, sans commission Zoma.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Rendez-vous en visioconférence</b><small>Le lien est généré avec le rendez-vous. Ni compte Zoom, ni logiciel à installer, ni pour vous ni pour votre client.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Rappels par SMS, 150 inclus par mois</b><small>Un SMS se lit, contrairement à un e-mail noyé dans une boîte de réception.</small></div></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Boutique</b><small>Vendez vos produits depuis votre page de réservation, réglés sur place.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Boutique et forfaits</b><small>Vos produits, cures et forfaits en vente sur votre page de réservation, réglés sur place ou par virement.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Relance des clients inactifs</b><small>Zoma repère celles et ceux que vous n'avez pas vus depuis longtemps et leur écrit à votre place.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Statistiques et pilotage</b><small>Chiffre d'affaires, prestations qui marchent, taux d'absence : vous savez où vous en êtes.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Support prioritaire</b><small>Vos demandes passent en haut de la pile.</small></div></li>
@@ -573,7 +609,7 @@
         <h2>Questions fréquentes</h2>
         <details class="qa"><summary>Ai-je besoin d'une carte bancaire pour l'essai ?<span class="pm">+</span></summary><div class="ans">Non. Vous créez votre compte et profitez de 30 jours complets sans rien saisir. Vous ne choisissez une formule que si Zoma vous convient.</div></details>
         <details class="qa"><summary>Puis-je changer de formule plus tard ?<span class="pm">+</span></summary><div class="ans">Oui, à tout moment depuis votre espace. Le changement prend effet immédiatement et la facturation est ajustée au prorata.</div></details>
-        <details class="qa"><summary>Que devient l'offre membre fondateur ?<span class="pm">+</span></summary><div class="ans">Les 100 premiers inscrits bénéficient de 30 % de remise pendant 24 mois. Vous êtes prévenu par e-mail 30 jours avant le retour au tarif normal. La remise est perdue en cas de résiliation.</div></details>
+        <details class="qa"><summary>Que devient l'offre membre fondateur ?<span class="pm">+</span></summary><div class="ans">Les 100 premiers inscrits bénéficient de 30 % de remise pendant 12 mois. Vous êtes prévenu par e-mail 30 jours avant le retour au tarif normal. La remise est perdue en cas de résiliation.</div></details>
         <details class="qa"><summary>Mes données sont-elles en sécurité ?<span class="pm">+</span></summary><div class="ans">Vos données et celles de vos clients sont hébergées en Europe et vous appartiennent. Vous pouvez les exporter ou supprimer votre compte quand vous le souhaitez.</div></details>
       </div>
     </div>
