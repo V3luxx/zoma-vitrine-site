@@ -69,14 +69,14 @@
       "name": "Essentiel",
       "price": "22.90",
       "priceCurrency": "EUR",
-      "description": "Page de réservation en ligne, agenda, rappels e-mail, fichier clients, import depuis Planity ou Booksy et messagerie client intégrée."
+      "description": "Page de réservation en ligne, agenda, rappels e-mail, fichier clients, prestations à domicile, import depuis Planity ou Booksy et messagerie client intégrée."
     },
     {
       "@type": "Offer",
       "name": "Pro",
       "price": "39.90",
       "priceCurrency": "EUR",
-      "description": "Tout Essentiel, plus acompte à la réservation, rendez-vous en visioconférence, rappels SMS, boutique, relance des clients inactifs et statistiques."
+      "description": "Tout Essentiel, plus acompte à la réservation, rendez-vous en visioconférence, séances collectives, rappels SMS, boutique, relance des clients inactifs et statistiques."
     }
   ]
 }
@@ -268,6 +268,37 @@
   .feat b{font-weight:600;font-size:.97rem}
   .feat small{display:block;color:var(--taupe);font-size:.87rem;line-height:1.45}
 
+  /* ---------- Formats de prestation (visio, groupe, domicile) ---------- */
+  .formats{border-top:1px solid var(--line)}
+  .formats-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;margin-top:42px}
+  .format-list{display:flex;flex-direction:column;gap:16px}
+  .format{display:flex;gap:1rem;align-items:flex-start;padding:22px 22px}
+  .format .icon-badge{flex:none;width:46px;height:46px;margin-bottom:0}
+  .format h3{font-size:1.15rem;margin-bottom:.35rem}
+  .format p{font-size:.95rem}
+  .tag-plan{display:inline-block;margin-left:.45rem;background:var(--rose);color:var(--terra-deep);font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .48rem;border-radius:999px;vertical-align:middle;position:relative;top:-2px}
+  .formats-combo{margin-top:18px;color:var(--taupe);font-size:.95rem}
+  .formats-combo b{color:var(--ink);font-weight:600}
+  .mock{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+  .mock-head{padding:16px 22px;border-bottom:1px solid var(--line);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);font-weight:700}
+  .mock-svc{padding:20px 22px}
+  .mock-svc + .mock-svc{border-top:1px solid var(--line)}
+  .mock-svc h4{font-size:1.05rem}
+  .mock-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .mock-pill{background:var(--rose-2);border:1px solid var(--rose);color:var(--terra-deep);font-size:.76rem;font-weight:600;padding:.18rem .6rem;border-radius:999px}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+  .slot{border:1px solid var(--line);border-radius:12px;padding:.5rem .3rem;text-align:center;font-weight:600;font-size:.92rem;background:var(--cream)}
+  .slot small{display:block;font-weight:500;font-size:.74rem;color:var(--terra-deep)}
+  .slot.full{color:#a59ebb;background:#fff}
+  .slot.full small{color:#a59ebb}
+  .mock-note{margin-top:12px;font-size:.84rem;color:var(--taupe)}
+  .mock-note u{color:var(--terra-deep);font-weight:600;text-decoration-thickness:1.5px;text-underline-offset:2px}
+  .mock-addr{display:flex;gap:.55rem;align-items:flex-start;margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:.65rem .8rem;background:var(--cream);font-size:.88rem}
+  .mock-addr svg{flex:none;color:var(--terra-deep);margin-top:2px}
+  .mock-addr small{display:block;color:var(--terra-deep);font-weight:600;font-size:.78rem}
+  .mock-price{margin-top:12px;font-size:.92rem;font-weight:600}
+  .mock-price span{color:var(--taupe);font-weight:400}
+
   /* ---------- Boutique ---------- */
   .shop-band{background:var(--rose-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .shop-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:68px 24px}
@@ -380,6 +411,7 @@
     .hero-grid{grid-template-columns:1fr;gap:40px}
     .pillars{grid-template-columns:1fr}
     .feat-row{grid-template-columns:1fr}
+    .formats-grid{grid-template-columns:1fr;gap:30px}
     .shop-grid{grid-template-columns:1fr;gap:34px;padding:54px 24px}
     .plans{grid-template-columns:1fr;max-width:420px}
     .contact-grid{grid-template-columns:1fr;gap:34px}
@@ -436,7 +468,7 @@
       <div class="reveal">
         <span class="eyebrow">L'app tout-en-un des solopreneurs</span>
         <h1>Faites votre métier. <em>Zoma fait le reste.</em></h1>
-        <p class="lead">Agenda, réservations en ligne, messagerie, fichier clients, visio, facturation : c'est la même app. Vos clients réservent seuls pendant que vous travaillez, et vous arrêtez de courir après les confirmations.</p>
+        <p class="lead">Agenda, réservations en ligne, messagerie, fichier clients, facturation : c'est la même app. Au cabinet, à domicile ou en visio, en individuel comme en groupe, vos clients réservent sans vous déranger, et vous arrêtez de courir après les confirmations.</p>
         <div class="hero-actions">
           <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr">Démarrer 30 jours gratuits</a>
           <button class="btn btn-ghost btn-lg" data-anchor="tarifs">Voir les tarifs</button>
@@ -492,7 +524,7 @@
         <div class="card hl reveal" style="transition-delay:.24s">
           <div class="icon-badge"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1.5" y="4.5" width="21" height="15" rx="3"/><line x1="1.5" y1="10" x2="22.5" y2="10"/><line x1="5.5" y1="15" x2="10" y2="15"/></svg></div>
           <h3>Acompte à la réservation <span class="tag-pro">Plan Pro</span></h3>
-          <p>Le créneau n'est bloqué qu'une fois l'acompte réglé. Il est versé sur votre compte, pas sur le nôtre : Zoma ne prend aucune commission.</p>
+          <p>Votre client règle l'acompte par carte au moment de réserver, et le créneau n'est bloqué qu'une fois le paiement passé. L'argent arrive sur votre compte, pas sur le nôtre : Zoma ne prend aucune commission.</p>
           <span class="more" data-anchor="tarifs">Voir le plan Pro →</span>
         </div>
         <div class="card reveal" style="transition-delay:.30s">
@@ -513,6 +545,65 @@
     </div>
   </section>
 
+  <!-- Formats de prestation -->
+  <section class="block formats" id="formats">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Partout où vous travaillez</span>
+        <h2>Au cabinet, à domicile, en visio. En tête-à-tête ou à douze.</h2>
+        <p>Chaque prestation a son lieu et son nombre de places. Vous les réglez une fois, et votre page de réservation fait le reste : elle envoie le lien de visio, compte les places qui restent ou demande l'adresse du client.</p>
+      </div>
+
+      <div class="formats-grid">
+        <div class="reveal">
+          <div class="format-list">
+            <div class="card format">
+              <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M23 7.5v9l-6-4.5z"/><rect x="1" y="5" width="16" height="14" rx="3"/></svg></div>
+              <div>
+                <h3>À distance <span class="tag-pro">Plan Pro</span></h3>
+                <p>Recevez vos clients en visio, où qu'ils habitent. Le lien part tout seul avec la confirmation.</p>
+              </div>
+            </div>
+            <div class="card format">
+              <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div>
+                <h3>En groupe <span class="tag-pro">Plan Pro</span></h3>
+                <p>Cours, atelier, stage : plusieurs clients réservent le même créneau, jusqu'à la dernière place.</p>
+              </div>
+            </div>
+            <div class="card format">
+              <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9"/><path d="M9.5 21v-6h5v6"/></svg></div>
+              <div>
+                <h3>À domicile <span class="tag-plan">Dès l'Essentiel</span></h3>
+                <p>Vos clients donnent leur adresse en réservant. Zoma compte vos frais de déplacement et votre temps de trajet.</p>
+              </div>
+            </div>
+          </div>
+          <p class="formats-combo"><b>Et ça se combine.</b> Un cours collectif en visio, c'est une seule salle et un seul lien pour tout le groupe.</p>
+        </div>
+
+        <div class="mock reveal" style="transition-delay:.1s" role="img" aria-label="Exemple de page de réservation : un cours collectif en visio avec les places restantes par créneau, et un soin à domicile avec l'adresse du client et le forfait de déplacement">
+          <div class="mock-head">Ce que voit votre client</div>
+          <div class="mock-svc">
+            <h4>Yoga doux</h4>
+            <div class="mock-meta"><span class="mock-pill">Séance collective · 12 places</span><span class="mock-pill">En visio</span></div>
+            <div class="slots">
+              <div class="slot">12:30<small>7 places</small></div>
+              <div class="slot">18:00<small>2 places</small></div>
+              <div class="slot full">19:30<small>complet</small></div>
+            </div>
+            <p class="mock-note">Une séance est complète ce jour-là. <u>Rejoindre la liste d'attente</u></p>
+          </div>
+          <div class="mock-svc">
+            <h4>Soin du visage</h4>
+            <div class="mock-meta"><span class="mock-pill">À domicile</span><span class="mock-pill">1 h</span></div>
+            <div class="mock-addr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div>12 rue des Lilas, 44000 Nantes<small>Dans la zone de déplacement</small></div></div>
+            <p class="mock-price">63 € <span>dont 8 € de déplacement</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Boutique -->
   <section class="shop-band">
@@ -520,7 +611,7 @@
       <div class="reveal">
         <span class="eyebrow">Boutique <span class="tag-pro">Plan Pro</span></span>
         <h2>Vos produits en vitrine, au moment où le client réserve</h2>
-        <p>La boutique affiche vos produits et vos forfaits juste à côté de vos prestations, là où vos clients prennent déjà rendez-vous. Le règlement se fait sur place ou par virement, et l'achat reste rattaché au rendez-vous.</p>
+        <p>La boutique affiche vos produits et vos forfaits juste à côté de vos prestations, là où vos clients prennent déjà rendez-vous. Le règlement se fait sur place, et l'achat reste rattaché au rendez-vous.</p>
         <p>De quoi vendre une cure ou un produit sans avoir à y penser à chaque fois.</p>
         <button class="btn btn-terra" data-anchor="tarifs">Voir le plan Pro</button>
       </div>
@@ -542,7 +633,7 @@
     <div class="wrap">
       <div class="founder reveal">Offre membre fondateur <b>&nbsp;30 % de remise pendant 12 mois</b>&nbsp; pour les 100 premiers inscrits</div>
       <h2 class="reveal">Un tarif simple, sans surprise</h2>
-      <p class="reveal"><b>Essentiel</b> suffit pour prendre vos rendez-vous et tenir votre fichier clients. <b>Pro</b> ajoute l'acompte, la visio et les SMS. Dans les deux cas : 30 jours d'essai, sans carte bancaire, résiliable quand vous voulez.</p>
+      <p class="reveal"><b>Essentiel</b> suffit pour prendre vos rendez-vous et tenir votre fichier clients. <b>Pro</b> ajoute l'acompte, la visio, les séances collectives et les SMS. Dans les deux cas : 30 jours d'essai, sans carte bancaire, résiliable quand vous voulez.</p>
 
       <div class="toggle reveal" role="tablist" aria-label="Période de facturation">
         <button class="on" id="tgMonth">Mensuel</button>
@@ -560,6 +651,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Page de réservation en ligne 24h/24</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Agenda &amp; confirmation automatique</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Horaires sur-mesure, plages et pauses</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Prestations à domicile : adresse du client, frais et temps de trajet</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels de rendez-vous par e-mail</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Fichier clients &amp; historique</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Import de vos clients et rendez-vous (Planity, Booksy…)</li>
@@ -580,18 +672,19 @@
         </div>
 
         <div class="plan featured reveal" style="transition-delay:.08s">
-          <span class="badge-pop">Le plus choisi</span>
+          <span class="badge-pop">Le plus complet</span>
           <div class="pname">Pro</div>
-          <div class="pdesc">Pour encaisser d'avance, recevoir en visio et suivre vos chiffres.</div>
+          <div class="pdesc">Pour encaisser d'avance, recevoir en visio ou en groupe et suivre vos chiffres.</div>
           <div class="price"><span class="amt" data-m="39,90" data-y="33,25">39,90 €</span><span class="per">TTC / mois</span></div>
           <div class="billed" data-bill="">Prix TTC, facturé mensuellement</div>
           <a class="btn btn-terra" href="https://app.zoma-app.fr">Démarrer l'essai gratuit</a>
           <div class="plus-head"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Tout ce que contient l'Essentiel, et en plus&nbsp;:</div>
           <ul class="plist">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Acompte à la réservation</b><small>Le créneau n'est bloqué qu'une fois l'acompte réglé. Il est versé sur votre compte, sans commission Zoma.</small></div></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Rendez-vous en visioconférence</b><small>Le lien est généré avec le rendez-vous. Ni compte Zoom, ni logiciel à installer, ni pour vous ni pour votre client.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Acompte à la réservation</b><small>Réglé par carte au moment de réserver : le créneau n'est bloqué qu'une fois l'acompte payé. Il est versé sur votre compte, sans commission Zoma.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Rendez-vous en visioconférence, 2 000 minutes incluses par mois</b><small>Le lien est généré avec le rendez-vous. Ni compte Zoom, ni logiciel à installer, ni pour vous ni pour votre client.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Séances collectives</b><small>Cours, ateliers, stages : plusieurs clients sur le même créneau, en salle ou en visio.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Rappels par SMS, 150 inclus par mois</b><small>Un SMS se lit, contrairement à un e-mail noyé dans une boîte de réception.</small></div></li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Boutique et forfaits</b><small>Vos produits, cures et forfaits en vente sur votre page de réservation, réglés sur place ou par virement.</small></div></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Boutique et forfaits</b><small>Vos produits, cures et forfaits en vente sur votre page de réservation, réglés sur place.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Relance des clients inactifs</b><small>Zoma repère celles et ceux que vous n'avez pas vus depuis longtemps et leur écrit à votre place.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Statistiques et pilotage</b><small>Chiffre d'affaires, prestations qui marchent, taux d'absence : vous savez où vous en êtes.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div><b>Support prioritaire</b><small>Vos demandes passent en haut de la pile.</small></div></li>
@@ -714,6 +807,10 @@
           <div class="ok-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg></div>
           <h3>Message envoyé !</h3>
           <p>Merci, on revient vers vous très vite.</p>
+        </div>
+        <div class="form-ok" id="formErr">
+          <h3>L'envoi n'a pas abouti</h3>
+          <p>Écrivez-nous directement à <a href="mailto:contact@zoma-app.fr" style="text-decoration:underline">contact@zoma-app.fr</a>, on vous répond sous 24 h.</p>
         </div>
       </div>
     </div>
