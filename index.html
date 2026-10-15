@@ -69,7 +69,7 @@
       "name": "Essentiel",
       "price": "22.90",
       "priceCurrency": "EUR",
-      "description": "Page de réservation en ligne, agenda, acompte à la réservation encaissé sur votre compte, rappels par e-mail et par SMS (50 par mois), fichier clients, prestations à domicile, import depuis Planity ou Booksy et messagerie client intégrée."
+      "description": "Page de réservation en ligne, agenda, acompte à la réservation encaissé sur votre compte, rappels par e-mail et par SMS (50 par mois), fichier clients, prestations à domicile, migration offerte depuis Planity, Booksy ou votre ancien outil (clients, rendez-vous, avis) et messagerie client intégrée."
     },
     {
       "@type": "Offer",
@@ -108,6 +108,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Si vous vous abonnez pendant la période de lancement, vous profitez de 30 % de remise sur votre formule pendant 3 mois : l'Essentiel revient à 16,03 € TTC par mois (13,36 € HT) et le Pro à 27,93 € TTC (23,28 € HT), puis 22,90 € et 39,90 € TTC. Vous êtes prévenu par e-mail 30 jours avant le retour au tarif normal. La remise est perdue en cas de résiliation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La migration depuis mon ancien outil est-elle offerte ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, pendant l'offre de lancement et quelle que soit votre formule. Vous importez vos clients, vos rendez-vous et vos avis depuis Planity, Booksy ou votre ancien outil, en libre-service, en quelques minutes. Et si vous préférez ne pas le faire seul, écrivez-nous : on vous accompagne gratuitement, par e-mail ou en visio."
       }
     },
     {
@@ -358,7 +366,7 @@
   .price-hero{padding:58px 0 12px;text-align:center}
   .price-hero h1{font-size:clamp(2.2rem,4.5vw,3.3rem);margin:1rem 0 .8rem}
   .price-hero p{color:var(--taupe);font-size:1.1rem;max-width:34rem;margin:0 auto}
-  .founder{display:inline-flex;align-items:center;gap:.6rem;background:var(--ink);color:var(--cream);border-radius:999px;padding:.55rem 1.1rem;font-size:.86rem;font-weight:500;margin-bottom:6px}
+  .founder{display:inline-block;max-width:100%;text-wrap:balance;background:var(--ink);color:var(--cream);border-radius:999px;padding:.55rem 1.1rem;font-size:.86rem;font-weight:500;line-height:1.5;text-align:center;margin-bottom:6px}
   .founder b{color:var(--terra)}
   .toggle{display:inline-flex;align-items:center;gap:14px;margin:30px auto 8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px}
   .toggle button{border:none;background:transparent;font-family:var(--font-body);font-weight:600;font-size:.92rem;color:var(--taupe);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.25s;display:flex;align-items:center;gap:.5rem}
@@ -524,6 +532,7 @@
           <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Sans carte bancaire</span>
           <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Prêt en 5 minutes</span>
           <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Base de données hébergée à Paris</span>
+          <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> Migration offerte</span>
         </div>
       </div>
 
@@ -584,7 +593,7 @@
       <div class="feat-row reveal">
         <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Liste d'attente automatique</b><small>Une annulation libère un créneau ? La personne suivante est prévenue sans que vous ayez à y penser.</small></div></div>
         <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Rappels de rendez-vous</b><small>Par e-mail et par SMS : 50 SMS par mois dans l'Essentiel, 150 dans le Pro. Moins d'oublis, moins de trous dans la journée.</small></div></div>
-        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Import depuis Planity ou Booksy</b><small>Vos clients et vos rendez-vous arrivent avec vous. Vous ne repartez pas d'une page blanche.</small></div></div>
+        <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Migration offerte depuis votre ancien outil</b><small>Vos clients, vos rendez-vous et vos avis arrivent avec vous depuis Planity, Booksy ou un autre outil. L'import se fait en libre-service, et on vous aide gratuitement si besoin, pendant l'offre de lancement.</small></div></div>
         <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Votre agenda dans Google, Apple ou Outlook</b><small>Vos rendez-vous Zoma s'affichent aussi dans l'agenda que vous ouvrez déjà.</small></div></div>
         <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Rendez-vous récurrents</b><small>Le cours du mardi 18 h se reprogramme tout seul, semaine après semaine.</small></div></div>
         <div class="feat"><span class="tick"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></span><div><b>Sur mobile et sur ordinateur</b><small>Le téléphone entre deux rendez-vous, l'ordinateur le soir pour la facturation.</small></div></div>
@@ -680,7 +689,7 @@
     <div class="wrap">
       <div class="founder reveal">Offre de lancement <b>-30&nbsp;%</b> pendant 3&nbsp;mois : Essentiel à <b>16,03&nbsp;€</b> et Pro à <b>27,93&nbsp;€</b> TTC par mois</div>
       <h2 class="reveal">Un tarif simple, sans surprise</h2>
-      <p class="reveal"><b>Essentiel</b> suffit pour prendre vos rendez-vous, encaisser un acompte, rappeler vos clients par SMS et tenir votre fichier clients. <b>Pro</b> ajoute la visio, les séances collectives et trois fois plus de SMS. Dans les deux cas : 30 jours d'essai, sans carte bancaire, résiliable quand vous voulez.</p>
+      <p class="reveal"><b>Essentiel</b> suffit pour prendre vos rendez-vous, encaisser un acompte, rappeler vos clients par SMS et tenir votre fichier clients. <b>Pro</b> ajoute la visio, les séances collectives et trois fois plus de SMS. Dans les deux cas : 30 jours d'essai, sans carte bancaire, résiliable quand vous voulez. Et si vous venez d'un autre outil, la migration de vos clients, rendez-vous et avis est offerte pendant l'offre de lancement.</p>
 
       <div class="toggle reveal" role="tablist" aria-label="Période de facturation">
         <button class="on" id="tgMonth">Mensuel</button>
@@ -704,7 +713,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels de rendez-vous par e-mail</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Rappels par SMS, 50 inclus par mois</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Fichier clients &amp; historique</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Import de vos clients et rendez-vous (Planity, Booksy…)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg><div>Import de vos clients, rendez-vous et avis (Planity, Booksy…)<small>Migration offerte pendant l'offre de lancement : en libre-service, avec notre aide si besoin.</small></div></li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Messagerie client intégrée</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Liste d'attente automatique</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg> Votre agenda Zoma dans Google, Apple ou Outlook</li>
@@ -753,6 +762,7 @@
         <details class="qa"><summary>Ai-je besoin d'une carte bancaire pour l'essai ?<span class="pm">+</span></summary><div class="ans">Non. Vous créez votre compte et profitez de 30 jours complets sans rien saisir. Vous ne choisissez une formule que si Zoma vous convient.</div></details>
         <details class="qa"><summary>Puis-je changer de formule plus tard ?<span class="pm">+</span></summary><div class="ans">Oui, à tout moment depuis votre espace. Le changement prend effet immédiatement et la facturation est ajustée au prorata.</div></details>
         <details class="qa"><summary>Comment fonctionne l'offre de lancement ?<span class="pm">+</span></summary><div class="ans">Si vous vous abonnez pendant la période de lancement, vous profitez de 30 % de remise sur votre formule pendant 3 mois : l'Essentiel revient à 16,03 € TTC par mois (13,36 € HT) et le Pro à 27,93 € TTC (23,28 € HT), puis 22,90 € et 39,90 € TTC. Vous êtes prévenu par e-mail 30 jours avant le retour au tarif normal. La remise est perdue en cas de résiliation.</div></details>
+        <details class="qa"><summary>La migration depuis mon ancien outil est-elle offerte ?<span class="pm">+</span></summary><div class="ans">Oui, pendant l'offre de lancement et quelle que soit votre formule. Vous importez vos clients, vos rendez-vous et vos avis depuis Planity, Booksy ou votre ancien outil, en libre-service, en quelques minutes. Et si vous préférez ne pas le faire seul, écrivez-nous : on vous accompagne gratuitement, par e-mail ou en visio.</div></details>
         <details class="qa"><summary>Mes données sont-elles en sécurité ?<span class="pm">+</span></summary><div class="ans">Vos données et celles de vos clients sont stockées dans une base de données hébergée à Paris et vous appartiennent. Vous pouvez les exporter à tout moment et supprimer votre compte depuis vos réglages. Certains prestataires techniques (connexion, envoi des e-mails, visio) sont établis hors de l'Union européenne, avec les garanties prévues par le RGPD : le détail figure dans notre politique de confidentialité.</div></details>
       </div>
     </div>
@@ -789,7 +799,7 @@
     <div class="wrap">
       <div class="cta-inner reveal">
         <h2>Voyez ce que ça donne sur votre agenda</h2>
-        <p>30 jours pour tout essayer (hors rappels SMS), sans carte bancaire. Vous gardez vos données, vous arrêtez quand vous voulez.</p>
+        <p>30 jours pour tout essayer (hors rappels SMS), sans carte bancaire. Vous venez d'un autre outil ? Vos clients, vos rendez-vous et vos avis arrivent avec vous, migration offerte. Vous gardez vos données, vous arrêtez quand vous voulez.</p>
         <a class="btn btn-terra btn-lg" href="https://app.zoma-app.fr">Commencer gratuitement</a>
       </div>
     </div>
@@ -887,6 +897,7 @@
         <a class="fl" data-go="contact">Contact</a>
         <a class="fl" data-go="contact">Démo personnalisée</a>
         <a class="fl" data-anchor="tarifs">Offre de lancement -30&nbsp;% pendant 3&nbsp;mois</a>
+        <a class="fl" data-anchor="tarifs">Migration offerte depuis votre ancien outil</a>
       </div>
       <div>
         <h5>Légal</h5>
