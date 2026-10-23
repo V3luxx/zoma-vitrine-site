@@ -49,10 +49,10 @@ What Zoma claims, and a neighbouring product could not truthfully copy as a bund
 
 - **Everything described on the site is in production** in the app as of 2026-10-13 (video, group sessions, shop, Stripe deposits, Planity/Booksy import, inactive-client follow-up, statistics). Confirmed by the owner. Future copy may describe these as present-tense facts; nothing else may be announced as available without confirmation.
 - **Stack:** static HTML/CSS/vanilla JS, no build step, no framework, no package manager. Fonts from Fontshare (Satoshi). Hosted at zoma-app.fr; files are deployed as-is. Keep it buildless unless the owner decides otherwise.
-- **Language:** French only (fr_FR). Inclusive forms with a median point are used for métiers ("client·es", "Esthéticien·ne"). Copy is written in the second person plural ("vous"), tutoiement is not used.
+- **Language:** French only (fr_FR). Inclusive forms with a median point are used for métiers ("client·es", "Esthéticien·ne"). Copy uses tutoiement ("tu", "ton", "tes"; imperatives like "Essaie", "Découvre"); vouvoiement is not used (owner decision, 2026-10-23). FAQ questions stay in the visitor's first person ("Puis-je…", "mes rendez-vous").
 - **Pricing figures are product truth,** not design content: TTC first, HT in small, launch-offer figures exactly as above. Never round or restyle them into something different.
 - **No team features, no acquisition promise, no till.** Copy must never imply otherwise.
-- **Terminology:** "indépendant", "solopreneur", "auto-entrepreneur"; "prestation"; "acompte"; "fichier clients"; "fiche client"; "livre des recettes"; "séance collective"; "à domicile"; "en visio"; plans are "Essentiel" and "Pro"; "page de réservation"; "liste d'attente"; "no-show" and "lapin" both appear in métier copy.
+- **Terminology:** "indépendant" ("tous les indépendants"), "auto-entrepreneur"; never "solopreneur"; "prestation"; "acompte"; "fichier clients"; "fiche client"; "livre des recettes"; "séance collective"; "à domicile"; "en visio"; plans are "Essentiel" and "Pro"; "page de réservation"; "liste d'attente"; "no-show" and "lapin" both appear in métier copy.
 - **Undecided:** whether the site should carry a dedicated pricing or features URL instead of hash sections; analytics or conversion tracking (none present today).
 
 ## Brand Commitments
@@ -63,7 +63,7 @@ Binding for all future work on the site (confirmed by the owner on 2026-10-13):
 - **Logo:** the grid mark in `zoma-favicon.svg`, also used as favicon-32.png, favicon-180.png and in the Organization JSON-LD.
 - **Colour:** the violet #6b52c8 (deep variant #5338a8) is the brand colour, declared as theme-color and used across all pages.
 - **Typeface:** Satoshi (via Fontshare) for display and body.
-- **Voice:** plain, concrete, honest French; short sentences; speaks to one person who works alone; names the daily pain (DMs, carnet, tableur, lapins) and the exact relief; says openly what the product does not do ("en toute transparence"); never hype. Signature lines in use: "Faites votre métier. Zoma fait le reste.", "Fait avec soin en France", "Une vraie personne vous répond".
+- **Voice:** plain, concrete, honest French; short sentences; speaks to one person who works alone; names the daily pain (DMs, carnet, tableur, lapins) and the exact relief; says openly what the product does not do ("en toute transparence"); never hype. Signature lines in use: "Fais ton métier. Zoma fait le reste.", "Fait avec soin en France", "Une vraie personne te répond".
 
 ## Evidence on Hand
 
