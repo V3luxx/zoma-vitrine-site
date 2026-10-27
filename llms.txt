@@ -46,3 +46,10 @@ Site : https://zoma-app.fr/ · Application : https://app.zoma-app.fr/ · Contact
 - [Photographe](https://zoma-app.fr/metiers/photographe/) : séances portrait, famille ou mariage, acompte de réservation.
 - [Formateur et formatrice](https://zoma-app.fr/metiers/formateur/) : sessions individuelles ou collectives, en salle ou à distance.
 - [Professeur particulier](https://zoma-app.fr/metiers/professeur-particulier/) : cours réguliers, packs de cours, visio et petits groupes.
+
+## Guides pratiques
+
+- [Guides pour indépendants](https://zoma-app.fr/guides/) : index des guides.
+- [Lapins et no-shows : 7 façons de protéger ton agenda](https://zoma-app.fr/guides/eviter-les-lapins/) : rappels, confirmation, acompte, politique d'annulation, liste d'attente, blocage après absences, quoi faire après un lapin.
+- [Demander un acompte à la réservation](https://zoma-app.fr/guides/demander-un-acompte/) : différence entre acompte et arrhes (article L214-1 du Code de la consommation), montant, encaissement, remboursement, livre des recettes et TVA.
+- [Le livre des recettes, expliqué simplement](https://zoma-app.fr/guides/livre-des-recettes/) : obligation en micro-entreprise, mentions obligatoires, modèle, conservation 10 ans, factures.

@@ -102,3 +102,34 @@ footer a:hover{color:var(--terra-deep)}
 @media(max-width:640px){ .nav-actions .btn-ghost{display:none} }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important} .btn:active{transform:scale(.985)}}
 .tag-pro{display:inline-block;margin-left:.3rem;background:var(--terra);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.16rem .42rem;border-radius:999px;vertical-align:middle;position:relative;top:-1px}
+
+/* Guides : pages article */
+.meta-line{font-size:.88rem;color:var(--taupe);margin-top:.2rem}
+.article{max-width:44rem;padding:10px 0 20px}
+.article h2{margin:2.4rem 0 .7rem;scroll-margin-top:90px}
+#faq{scroll-margin-top:90px}
+.article h3{font-size:1.12rem;margin:1.6rem 0 .45rem}
+.article p{margin:0 0 1rem}
+.article ul,.article ol{margin:0 0 1rem;padding-left:1.3rem}
+.article li{margin:.35rem 0}
+.article a{color:var(--terra-deep);text-decoration:underline;text-underline-offset:3px}
+.article .btn{text-decoration:none}
+.tldr{background:var(--rose-2);border:1px solid var(--rose);border-radius:var(--r);padding:20px 22px;margin:4px 0 8px}
+.tldr h2{font-size:1.05rem;margin:0 0 .5rem;text-transform:uppercase;letter-spacing:.1em;color:var(--terra-deep)}
+.tldr ul{margin:0}
+.toc{border-left:2px solid var(--line);padding:2px 0 2px 16px;margin:22px 0 0;font-size:.95rem}
+.toc b{display:block;margin-bottom:.3rem}
+.toc ol{margin:0;padding-left:1.1rem}
+.toc a{text-decoration:none;color:var(--taupe)}
+.toc a:hover{color:var(--terra-deep)}
+.quote{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--terra);border-radius:12px;padding:14px 18px;margin:0 0 1rem;color:var(--taupe)}
+.zoma-box{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow-sm);margin:1.2rem 0}
+.zoma-box h3{margin-top:0}
+.zoma-box ul{margin-bottom:0}
+.tbl{overflow-x:auto;margin:0 0 1rem;border:1px solid var(--line);border-radius:12px;background:var(--white)}
+.tbl table{border-collapse:collapse;width:100%;font-size:.9rem;min-width:520px}
+.tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{background:var(--rose-2);font-weight:600}
+.tbl tr:last-child td{border-bottom:0}
+.tbl caption{caption-side:bottom;text-align:left;font-size:.82rem;color:var(--taupe);padding:8px 12px}
+.disclaimer{font-size:.88rem;color:var(--taupe)}
