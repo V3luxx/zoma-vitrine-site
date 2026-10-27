@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Zoma : logiciel de réservation en ligne et gestion pour indépendants</title>
-<meta name="description" content="Zoma réunit agenda, prise de rendez-vous en ligne, messagerie client et fichier clients dans une seule app simple et abordable pour indépendants et auto-entrepreneurs. Essai 30 jours sans carte bancaire." />
+<title>Zoma : logiciel de prise de rendez-vous en ligne pour indépendants</title>
+<meta name="description" content="Logiciel de prise de rendez-vous en ligne pour indépendants : agenda, réservation 24h/24, acompte, rappels SMS, fichier clients et facturation. Sans commission. Essai gratuit 30 jours." />
 <link rel="canonical" href="https://zoma-app.fr/" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#6b52c8" />
@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Zoma" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:url" content="https://zoma-app.fr/" />
-<meta property="og:title" content="Zoma : logiciel de réservation en ligne et gestion pour indépendants" />
+<meta property="og:title" content="Zoma : logiciel de prise de rendez-vous en ligne pour indépendants" />
 <meta property="og:description" content="Agenda, prise de rendez-vous en ligne, messagerie et fichier clients dans une seule app simple et abordable. Essai 30 jours sans carte bancaire." />
 <meta property="og:image" content="https://zoma-app.fr/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -28,7 +28,7 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Zoma : logiciel de réservation en ligne et gestion pour indépendants" />
+<meta name="twitter:title" content="Zoma : logiciel de prise de rendez-vous en ligne pour indépendants" />
 <meta name="twitter:description" content="Agenda, RDV en ligne, messagerie et fichier clients dans une seule app pour indépendants. Essai 30 jours sans carte." />
 <meta name="twitter:image" content="https://zoma-app.fr/og-image.png" />
 
@@ -40,43 +40,130 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Zoma",
-  "url": "https://zoma-app.fr/",
-  "logo": "https://zoma-app.fr/favicon-180.png",
-  "description": "Logiciel tout-en-un de réservation et de gestion pour indépendants et auto-entrepreneurs : agenda, prise de rendez-vous en ligne, messagerie client et fichier clients.",
-  "email": "contact@zoma-app.fr",
-  "areaServed": "FR",
-  "sameAs": [
-    "https://www.instagram.com/zoma.app",
-    "https://www.tiktok.com/@zoma.app"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Zoma",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web, iOS, Android",
-  "url": "https://zoma-app.fr/",
-  "description": "App de réservation en ligne et de gestion pour indépendants : agenda, page de réservation 24h/24, messagerie client, fichier clients, rappels de rendez-vous, rendez-vous en visioconférence, acomptes et facturation.",
-  "inLanguage": "fr",
-  "offers": [
+  "@graph": [
     {
-      "@type": "Offer",
-      "name": "Essentiel",
-      "price": "22.90",
-      "priceCurrency": "EUR",
-      "description": "Page de réservation en ligne, agenda, acompte à la réservation encaissé sur ton compte, rappels par e-mail et par SMS (50 par mois), fichier clients, prestations à domicile, migration offerte depuis Planity, Booksy ou ton ancien outil (clients, rendez-vous, avis) et messagerie client intégrée."
+      "@type": "Organization",
+      "@id": "https://zoma-app.fr/#organization",
+      "name": "Zoma",
+      "url": "https://zoma-app.fr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://zoma-app.fr/favicon-180.png",
+        "width": 180,
+        "height": 180
+      },
+      "description": "Éditeur français de Zoma, logiciel de prise de rendez-vous en ligne et de gestion pour les indépendants qui travaillent seuls.",
+      "email": "contact@zoma-app.fr",
+      "areaServed": { "@type": "Country", "name": "France" },
+      "knowsLanguage": "fr",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@zoma-app.fr",
+        "availableLanguage": "French",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        }
+      },
+      "sameAs": [
+        "https://www.instagram.com/zoma.app",
+        "https://www.tiktok.com/@zoma.app"
+      ]
     },
     {
-      "@type": "Offer",
-      "name": "Pro",
-      "price": "39.90",
-      "priceCurrency": "EUR",
-      "description": "Tout Essentiel, plus 150 SMS de rappel par mois au lieu de 50, rendez-vous en visioconférence, séances collectives, boutique, relance des clients inactifs et statistiques."
+      "@type": "WebSite",
+      "@id": "https://zoma-app.fr/#website",
+      "url": "https://zoma-app.fr/",
+      "name": "Zoma",
+      "alternateName": ["Zoma app", "zoma-app.fr"],
+      "description": "Logiciel de prise de rendez-vous en ligne pour indépendants : agenda, réservation 24h/24, acompte, rappels, fichier clients et facturation.",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://zoma-app.fr/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://zoma-app.fr/#webpage",
+      "url": "https://zoma-app.fr/",
+      "name": "Zoma : logiciel de prise de rendez-vous en ligne pour indépendants",
+      "inLanguage": "fr-FR",
+      "isPartOf": { "@id": "https://zoma-app.fr/#website" },
+      "about": { "@id": "https://zoma-app.fr/#software" },
+      "primaryImageOfPage": "https://zoma-app.fr/assets/app-agenda.png",
+      "dateModified": "2026-10-27"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://zoma-app.fr/#software",
+      "name": "Zoma",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Logiciel de prise de rendez-vous en ligne",
+      "operatingSystem": "Web, iOS, Android",
+      "url": "https://zoma-app.fr/",
+      "installUrl": "https://app.zoma-app.fr/",
+      "screenshot": "https://zoma-app.fr/assets/app-agenda.png",
+      "description": "Logiciel français de prise de rendez-vous en ligne et de gestion pour les indépendants qui travaillent seuls : agenda, page de réservation 24h/24 à ton nom, acompte à la réservation encaissé sur ton compte, rappels par e-mail et SMS, messagerie client, fichier clients, prestations à domicile, visio, séances collectives, facturation et livre des recettes. Prix fixe TTC, sans commission.",
+      "inLanguage": "fr",
+      "publisher": { "@id": "https://zoma-app.fr/#organization" },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Indépendants et auto-entrepreneurs qui travaillent seuls et prennent des rendez-vous",
+        "audienceType": "Prothésistes ongulaires, esthéticien·nes, coiffeur·ses, tatoueur·ses, coachs sportifs, naturopathes, sophrologues, thérapeutes et praticien·nes bien-être, consultant·es et freelances, photographes, formateur·ices, professeurs particuliers",
+        "geographicArea": { "@type": "Country", "name": "France" }
+      },
+      "featureList": [
+        "Page de réservation en ligne ouverte 24h/24, au nom du professionnel",
+        "Agenda avec horaires sur-mesure, plages et pauses",
+        "Acompte à la réservation encaissé sur le compte Stripe du professionnel, sans commission",
+        "Rappels de rendez-vous par e-mail et par SMS",
+        "Liste d'attente automatique",
+        "Fichier clients avec historique et notes",
+        "Messagerie client rattachée à chaque fiche",
+        "Prestations à domicile : adresse, zone, frais et temps de trajet",
+        "Rendez-vous en visioconférence sans compte à créer",
+        "Séances collectives avec places restantes",
+        "Synchronisation avec Google Agenda, Apple Calendrier et Outlook",
+        "Facturation et livre des recettes",
+        "Boutique et forfaits",
+        "Import depuis Planity, Booksy ou un autre outil",
+        "Base de données hébergée à Paris, export intégral"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essentiel",
+          "price": "22.90",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "22.90",
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": true,
+            "billingDuration": "P1M",
+            "unitText": "mois"
+          },
+          "eligibleRegion": { "@type": "Country", "name": "France" },
+          "url": "https://zoma-app.fr/#tarifs",
+          "description": "Page de réservation en ligne, agenda, acompte à la réservation encaissé sur ton compte, rappels par e-mail et par SMS (50 par mois), fichier clients, prestations à domicile, migration offerte depuis Planity, Booksy ou ton ancien outil (clients, rendez-vous, avis) et messagerie client intégrée."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "39.90",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "39.90",
+            "priceCurrency": "EUR",
+            "valueAddedTaxIncluded": true,
+            "billingDuration": "P1M",
+            "unitText": "mois"
+          },
+          "eligibleRegion": { "@type": "Country", "name": "France" },
+          "url": "https://zoma-app.fr/#tarifs",
+          "description": "Tout Essentiel, plus 150 SMS de rappel par mois au lieu de 50, rendez-vous en visioconférence, séances collectives, boutique, relance des clients inactifs et statistiques."
+        }
+      ]
     }
   ]
 }
@@ -86,6 +173,38 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Zoma, c'est quoi exactement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zoma est un logiciel français de prise de rendez-vous en ligne et de gestion pour les indépendants qui travaillent seuls. Il réunit ton agenda, une page de réservation ouverte 24h/24 à ton nom, l'acompte à la réservation, les rappels par e-mail et par SMS, la messagerie et le fichier clients, la facturation et le livre des recettes. Il s'utilise sur téléphone comme sur ordinateur, à partir de 22,90 € TTC par mois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zoma prend-il une commission sur mes rendez-vous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Tu paies un abonnement à prix fixe, 22,90 € ou 39,90 € TTC par mois, et c'est tout : aucune commission sur tes rendez-vous, tes acomptes ou tes nouveaux clients. Les acomptes arrivent sur ton propre compte Stripe ; seuls les frais bancaires de Stripe s'appliquent, facturés par Stripe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pour quels métiers Zoma est-il fait ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour toute activité sur rendez-vous exercée seul·e : prothésiste ongulaire, esthéticien·ne, coiffeur·se, tatoueur·se, coach sportif, naturopathe, sophrologue, thérapeute ou praticien·ne bien-être, consultant·e, photographe, formateur·ice, professeur particulier, et bien d'autres. Au cabinet, à domicile ou en visio, en individuel comme en groupe. Zoma ne gère pas d'équipe : il n'y a pas d'agenda par collaborateur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mes clients doivent-ils installer une application ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Ils réservent depuis le lien de ta page de réservation, sur leur téléphone ou leur ordinateur, sans rien installer. Ils reçoivent la confirmation et les rappels, et peuvent modifier ou annuler eux-mêmes leur rendez-vous."
+      }
+    },
     {
       "@type": "Question",
       "name": "Ai-je besoin d'une carte bancaire pour l'essai ?",
@@ -523,7 +642,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="reveal">
-        <span class="eyebrow">L'app tout-en-un de tous les indépendants</span>
+        <span class="eyebrow">Logiciel de prise de rendez-vous pour tous les indépendants</span>
         <h1>Fais ton métier. <em>Zoma fait le reste.</em></h1>
         <p class="lead">Agenda, réservations en ligne, messagerie, fichier clients, facturation : c'est la même app. Au cabinet, à domicile ou en visio, en individuel comme en groupe, tes clients réservent sans te déranger, et tu arrêtes de courir après les confirmations.</p>
         <div class="hero-actions">
@@ -761,6 +880,10 @@
 
       <div class="faq reveal">
         <h2>Questions fréquentes</h2>
+        <details class="qa"><summary>Zoma, c'est quoi exactement ?<span class="pm">+</span></summary><div class="ans">Zoma est un logiciel français de prise de rendez-vous en ligne et de gestion pour les indépendants qui travaillent seuls. Il réunit ton agenda, une page de réservation ouverte 24h/24 à ton nom, l'acompte à la réservation, les rappels par e-mail et par SMS, la messagerie et le fichier clients, la facturation et le livre des recettes. Il s'utilise sur téléphone comme sur ordinateur, à partir de 22,90 € TTC par mois.</div></details>
+        <details class="qa"><summary>Zoma prend-il une commission sur mes rendez-vous ?<span class="pm">+</span></summary><div class="ans">Non. Tu paies un abonnement à prix fixe, 22,90 € ou 39,90 € TTC par mois, et c'est tout : aucune commission sur tes rendez-vous, tes acomptes ou tes nouveaux clients. Les acomptes arrivent sur ton propre compte Stripe ; seuls les frais bancaires de Stripe s'appliquent, facturés par Stripe.</div></details>
+        <details class="qa"><summary>Pour quels métiers Zoma est-il fait ?<span class="pm">+</span></summary><div class="ans">Pour toute activité sur rendez-vous exercée seul·e : prothésiste ongulaire, esthéticien·ne, coiffeur·se, tatoueur·se, coach sportif, naturopathe, sophrologue, thérapeute ou praticien·ne bien-être, consultant·e, photographe, formateur·ice, professeur particulier, et bien d'autres. Au cabinet, à domicile ou en visio, en individuel comme en groupe. Zoma ne gère pas d'équipe : il n'y a pas d'agenda par collaborateur. <a href="/metiers/" style="text-decoration:underline">Voir les pages métiers</a></div></details>
+        <details class="qa"><summary>Mes clients doivent-ils installer une application ?<span class="pm">+</span></summary><div class="ans">Non. Ils réservent depuis le lien de ta page de réservation, sur leur téléphone ou leur ordinateur, sans rien installer. Ils reçoivent la confirmation et les rappels, et peuvent modifier ou annuler eux-mêmes leur rendez-vous.</div></details>
         <details class="qa"><summary>Ai-je besoin d'une carte bancaire pour l'essai ?<span class="pm">+</span></summary><div class="ans">Non. Tu crées ton compte et profites de 30 jours complets sans rien saisir. Tu ne choisis une formule que si Zoma te convient.</div></details>
         <details class="qa"><summary>Puis-je changer de formule plus tard ?<span class="pm">+</span></summary><div class="ans">Oui, à tout moment depuis ton espace. Le changement prend effet immédiatement et la facturation est ajustée au prorata.</div></details>
         <details class="qa"><summary>Comment fonctionne l'offre de lancement ?<span class="pm">+</span></summary><div class="ans">Si tu t'abonnes pendant la période de lancement, tu profites de 30 % de remise sur ta formule pendant 3 mois : l'Essentiel revient à 16,03 € TTC par mois (13,36 € HT) et le Pro à 27,93 € TTC (23,28 € HT), puis 22,90 € et 39,90 € TTC. Tu es prévenu·e par e-mail 30 jours avant le retour au tarif normal. La remise est perdue en cas de résiliation.</div></details>

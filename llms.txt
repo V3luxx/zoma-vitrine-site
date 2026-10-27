@@ -1,0 +1,48 @@
+# Zoma
+
+> Zoma est un logiciel français de prise de rendez-vous en ligne et de gestion pour les indépendants qui travaillent seuls (auto-entrepreneurs, micro-entrepreneurs, professions libérales). Une seule app réunit l'agenda, une page de réservation ouverte 24h/24 au nom du professionnel, l'acompte à la réservation, les rappels par e-mail et SMS, la messagerie client, le fichier clients, la facturation et le livre des recettes. Prix fixe TTC, sans commission. Essai gratuit de 30 jours sans carte bancaire.
+
+Site : https://zoma-app.fr/ · Application : https://app.zoma-app.fr/ · Contact : contact@zoma-app.fr · Instagram et TikTok : @zoma.app
+
+## Faits clés
+
+- Pour qui : toute personne qui exerce seule une activité sur rendez-vous, au cabinet ou en salon, à domicile chez le client, en visio, en individuel ou en groupe.
+- Prix : Essentiel 22,90 € TTC par mois, Pro 39,90 € TTC par mois. Annuel : 229 € et 399 € TTC (deux mois offerts). Prix affichés TTC.
+- Aucune commission sur les rendez-vous, les acomptes ou les nouveaux clients.
+- Acompte à la réservation (dès l'Essentiel) : pourcentage, montant fixe ou paiement complet, encaissé directement sur le compte Stripe du professionnel ; le créneau n'est bloqué qu'une fois le paiement passé. Seuls les frais bancaires de Stripe s'appliquent.
+- Rappels par e-mail et par SMS : 50 SMS par mois dans l'Essentiel, 150 dans le Pro.
+- Prestations à domicile (dès l'Essentiel) : adresse du client à la réservation, zone de déplacement, frais de déplacement ajoutés au prix, temps de trajet réservé dans l'agenda.
+- Plan Pro en plus : rendez-vous en visio sans compte à créer (2 000 minutes par mois), séances collectives avec places restantes, boutique et forfaits, relance des clients inactifs, statistiques, support prioritaire.
+- Les clients réservent depuis un simple lien, sans installer d'application. Ils peuvent modifier ou annuler eux-mêmes. Liste d'attente automatique en cas d'annulation.
+- Synchronisation avec Google Agenda, Apple Calendrier et Outlook.
+- Import en libre-service depuis Planity, Booksy ou un autre outil (clients, rendez-vous, avis).
+- Données : base de données hébergée à Paris, données dans l'Union européenne, export intégral à tout moment. Équipe et support en France, en français.
+- Essai : 30 jours gratuits, sans carte bancaire, sans engagement (rappels SMS exclus pendant l'essai).
+
+## Ce que Zoma ne fait pas
+
+- Zoma n'apporte pas de nouveaux clients : pas d'annuaire public, pas de mise en avant payante. La page de réservation est au nom du professionnel, sans autres professionnels à côté.
+- Zoma ne gère pas d'équipe : pas d'agenda par collaborateur. L'outil est pensé pour une personne seule.
+- Zoma n'est pas une caisse ni un terminal de paiement : les paiements sur place sont enregistrés, pas encaissés.
+- Zoma n'est pas un hébergeur de données de santé (HDS) : les praticiens n'y enregistrent pas d'informations médicales.
+
+## Pages principales
+
+- [Accueil, fonctionnalités et tarifs](https://zoma-app.fr/) : présentation complète, grille tarifaire et questions fréquentes.
+- [Pourquoi Zoma ?](https://zoma-app.fr/comparatif/) : ce que Zoma fait de mieux face au carnet papier, à un agenda en ligne généraliste ou à une plateforme de réservation grand public, et ce qu'il ne fait pas.
+- [Zoma pour chaque métier](https://zoma-app.fr/metiers/) : index des pages métiers.
+
+## Logiciel de prise de rendez-vous par métier
+
+- [Prothésiste ongulaire](https://zoma-app.fr/metiers/prothesiste-ongulaire/) : acompte anti-lapin, pose en onglerie ou à domicile, fiche cliente.
+- [Esthéticienne](https://zoma-app.fr/metiers/estheticienne/) : soins de durées différentes, en cabine ou à domicile.
+- [Coiffeur indépendant](https://zoma-app.fr/metiers/coiffeur/) : au salon ou à domicile, sans commission.
+- [Tatoueur](https://zoma-app.fr/metiers/tatoueur/) : acompte pour bloquer la séance, projets suivis dans la fiche client.
+- [Coach sportif](https://zoma-app.fr/metiers/coach-sportif/) : séances individuelles, en petit groupe, à domicile ou en visio.
+- [Naturopathe](https://zoma-app.fr/metiers/naturopathe/) : consultations réservées en ligne, rappels, historique de chaque consultant·e.
+- [Sophrologue](https://zoma-app.fr/metiers/sophrologue/) : séances individuelles, de groupe ou à distance.
+- [Thérapeute et praticien bien-être](https://zoma-app.fr/metiers/therapeute/) : réservation, suivi client et messagerie.
+- [Consultant et freelance](https://zoma-app.fr/metiers/consultant/) : lien de réservation à partager, acompte, agenda synchronisé avec Google, Apple ou Outlook.
+- [Photographe](https://zoma-app.fr/metiers/photographe/) : séances portrait, famille ou mariage, acompte de réservation.
+- [Formateur et formatrice](https://zoma-app.fr/metiers/formateur/) : sessions individuelles ou collectives, en salle ou à distance.
+- [Professeur particulier](https://zoma-app.fr/metiers/professeur-particulier/) : cours réguliers, packs de cours, visio et petits groupes.
