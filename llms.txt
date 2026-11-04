@@ -46,6 +46,11 @@ Site : https://zoma-app.fr/ · Application : https://app.zoma-app.fr/ · Contact
 - [Photographe](https://zoma-app.fr/metiers/photographe/) : séances portrait, famille ou mariage, acompte de réservation.
 - [Formateur et formatrice](https://zoma-app.fr/metiers/formateur/) : sessions individuelles ou collectives, en salle ou à distance.
 - [Professeur particulier](https://zoma-app.fr/metiers/professeur-particulier/) : cours réguliers, packs de cours, visio et petits groupes.
+- [Travailler à domicile](https://zoma-app.fr/a-domicile/) : zone de déplacement (codes postaux, départements ou rayon), adresse demandée avant le créneau, temps de trajet estimé et bloqué avant et après chaque rendez-vous, forfait de déplacement par prestation, jusqu'à trois prestations à la suite pour un seul trajet. Inclus dès l'Essentiel.
+- [Prothésiste ongulaire à domicile](https://zoma-app.fr/a-domicile/prothesiste-ongulaire/) : pose avec adresse et digicode, trajet bloqué, acompte.
+- [Lash artist à domicile](https://zoma-app.fr/a-domicile/extensions-de-cils/) : extensions de cils, séances longues, remplissages, allergies signalées avec accord.
+- [Esthéticienne à domicile](https://zoma-app.fr/a-domicile/estheticienne/) : soins courts, plusieurs soins à la suite pour un seul déplacement.
+- [Coiffeur à domicile](https://zoma-app.fr/a-domicile/coiffeur/) : durées variables, réservation pour un proche, acompte pour les mariages.
 
 ## Guides pratiques
 
