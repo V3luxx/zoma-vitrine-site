@@ -53,3 +53,21 @@ Site : https://zoma-app.fr/ · Application : https://app.zoma-app.fr/ · Contact
 - [Lapins et no-shows : 7 façons de protéger ton agenda](https://zoma-app.fr/guides/eviter-les-lapins/) : rappels, confirmation, acompte, politique d'annulation, liste d'attente, blocage après absences, quoi faire après un lapin.
 - [Demander un acompte à la réservation](https://zoma-app.fr/guides/demander-un-acompte/) : différence entre acompte et arrhes (article L214-1 du Code de la consommation), montant, encaissement, remboursement, livre des recettes et TVA.
 - [Le livre des recettes, expliqué simplement](https://zoma-app.fr/guides/livre-des-recettes/) : obligation en micro-entreprise, mentions obligatoires, modèle, conservation 10 ans, factures.
+
+<!-- aide:debut -->
+## Aide : cas pratiques (mode d'emploi de l'app)
+
+- [Aide](https://zoma-app.fr/aide/) : index des cas pratiques, une situation et la marche à suivre dans Zoma.
+- [Tu pars en vacances ?](https://zoma-app.fr/aide/vacances/) : Bloque tes dates en deux minutes : plus personne ne peut réserver pendant ton absence.
+- [Tu changes tes horaires ?](https://zoma-app.fr/aide/horaires/) : Modifie tes jours et tes heures de travail, pause déjeuner comprise : ta page de réservation suit aussitôt.
+- [Un client veut déplacer son rendez-vous ?](https://zoma-app.fr/aide/deplacer-un-rdv/) : Il peut le faire seul depuis son e-mail. Sinon, tu le déplaces en deux gestes.
+- [Un client revient chaque semaine ?](https://zoma-app.fr/aide/rdv-recurrent/) : Crée toute la série de rendez-vous en une fois, au lieu de les saisir un par un.
+- [Un client annule au dernier moment ?](https://zoma-app.fr/aide/annulation-derniere-minute/) : Zoma rembourse ou non selon ta règle, propose le créneau à ta liste d'attente et te prévient.
+- [Un client ne vient pas ?](https://zoma-app.fr/aide/client-absent/) : Note son absence, garde son acompte et, si ça se répète, bloque ses réservations en ligne.
+- [Tu veux demander un acompte ?](https://zoma-app.fr/aide/acompte/) : Tes clients paient une partie en réservant, directement sur ton compte : moins de lapins, moins de pertes.
+- [Tes clients ne trouvent plus de place ?](https://zoma-app.fr/aide/liste-d-attente/) : Ils s'inscrivent sur ta liste d'attente, et Zoma les prévient dès qu'un créneau se libère.
+- [Tu ajoutes une nouvelle prestation ?](https://zoma-app.fr/aide/nouvelle-prestation/) : Crée-la en une minute : elle apparaît aussitôt sur ta page de réservation.
+- [Tu veux partager ton lien de réservation ?](https://zoma-app.fr/aide/lien-de-reservation/) : Copie-le, imprime son QR code ou personnalise-le : tes clients réservent en un geste.
+- [Tu changes d'outil ?](https://zoma-app.fr/aide/changer-d-outil/) : Récupère tes clients, tes rendez-vous et tes avis, sans que tes clients reçoivent de messages en double.
+- [Ton client règle sur place ?](https://zoma-app.fr/aide/encaisser-et-facturer/) : Note le paiement en deux gestes, et fais sa facture s'il en veut une.
+<!-- aide:fin -->
