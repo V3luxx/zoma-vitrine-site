@@ -39,6 +39,7 @@ Site : https://zoma-app.fr/ · Application : https://app.zoma-app.fr/ · Contact
 - [Coiffeur indépendant](https://zoma-app.fr/metiers/coiffeur/) : au salon ou à domicile, sans commission.
 - [Tatoueur](https://zoma-app.fr/metiers/tatoueur/) : acompte pour bloquer la séance, projets suivis dans la fiche client.
 - [Coach sportif](https://zoma-app.fr/metiers/coach-sportif/) : séances individuelles, en petit groupe, à domicile ou en visio.
+- [Professeur de yoga](https://zoma-app.fr/metiers/professeur-de-yoga/) : cours collectifs avec nombre de places et liste d'attente (plan Pro), cours particuliers, à domicile ou en visio ; pas de décompte de carnet ni d'abonnement mensuel.
 - [Naturopathe](https://zoma-app.fr/metiers/naturopathe/) : consultations réservées en ligne, rappels, historique de chaque consultant·e.
 - [Sophrologue](https://zoma-app.fr/metiers/sophrologue/) : séances individuelles, de groupe ou à distance.
 - [Thérapeute et praticien bien-être](https://zoma-app.fr/metiers/therapeute/) : réservation, suivi client et messagerie.
