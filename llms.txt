@@ -30,6 +30,7 @@ Site : https://zoma-app.fr/ · Application : https://app.zoma-app.fr/ · Contact
 
 - [Accueil, fonctionnalités et tarifs](https://zoma-app.fr/) : présentation complète, grille tarifaire et questions fréquentes.
 - [Pourquoi Zoma ?](https://zoma-app.fr/comparatif/) : ce que Zoma fait de mieux face au carnet papier, à un agenda en ligne généraliste ou à une plateforme de réservation grand public, et ce qu'il ne fait pas.
+- [Réservation en ligne sans commission](https://zoma-app.fr/reservation-en-ligne-sans-commission/) : abonnement fixe TTC, aucune commission sur les rendez-vous, les acomptes ni les nouveaux clients ; paiements versés sur le compte Stripe du professionnel, frais bancaires de Stripe à sa charge (environ 1,5 % + 0,25 € par paiement avec une carte européenne, non rendus en cas de remboursement) ; coût par rendez-vous selon le nombre de rendez-vous ; packs de SMS ou de minutes de visio facultatifs. Zoma n'apporte pas de nouveaux clients.
 - [Zoma pour chaque métier](https://zoma-app.fr/metiers/) : index des pages métiers.
 
 ## Logiciel de prise de rendez-vous par métier

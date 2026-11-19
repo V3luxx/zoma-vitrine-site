@@ -44,7 +44,7 @@ h1{font-size:clamp(2rem,4.4vw,3rem);margin:1rem 0 .9rem}
 section.block{padding:34px 0}
 h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.5rem}
 .sub{color:var(--taupe);max-width:46rem;margin-bottom:1.2rem}
-.sub a,.qa .ans a,.simple-band p a{color:var(--terra-deep);text-decoration:underline;text-underline-offset:3px}
+.sub a,.qa .ans a,.simple-band p a,.price-band p a{color:var(--terra-deep);text-decoration:underline;text-underline-offset:3px}
 .simple-band p+p{margin-top:.75rem}
 section.block[id]{scroll-margin-top:90px}
 
